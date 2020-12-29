@@ -2,37 +2,264 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* sidebar */
+.sidebar {
+  background-color: #373c3f;
+  width: 14%;
+  height: 100%;
+  float: left;
+  overflow: auto;
+  position: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar-header {
+  background-color: #8f9295;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  margin-top: 15px;
+  margin-left: 18px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-header p{
+  margin-left: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-header .name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #e2e3e3;
+  display: flex;
+  margin-left: 17px;
+}
+
+.sidebar-header i {
+  margin-top: 3px;
+  margin-left: 8px;
+  color: #8f9295;
+}
+
+.sidebar-setting {
+  display: flex;
+  margin-top: 22px;
+  margin-left: 20px;
+}
+
+.sidebar-setting i {
+  color: #8f9295;
+  margin-top: 4px;
+}
+
+.sidebar-setting .setting-name {
+  color: #8f9295;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.sidebar-settings {
+  display: flex;
+  margin-top: 11px;
+  margin-left: 20px;
+}
+
+.sidebar-settings i {
+  color: #8f9295;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.sidebar-settings .setting-name {
+  color: #8f9295;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.sidebar-addpage {
+  background-color: #474c50;
+  height: 26px;
+}
+
+.sidebar-addpage .todolist {
+  display: flex;
+  margin-top: 35px;
+  margin-left: 20px;
+  padding: 2px;
+}
+
+.sidebar-addpage .todolist i {
+  color: #8f9295;
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+.sidebar-addpage .todolist img {
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.sidebar-addpage .todolist .addpage-name {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.sidebar-todolist {
+  display: flex;
+  margin-left: 20px;
+}
+
+.sidebar-todolist p {
+  color: #8f9295;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 1px;
+}
+
+.sidebar-todolist .addpage-name {
+  color: #8f9295;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 6px;
+  margin-left: 14px;
+}
+
+.sidebar-service {
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+.sidebar-service .templates {
+  display: flex;
+  margin-top: 12px;
+}
+
+.sidebar-service .templates i {
+  color: #8f9295;
+  margin-top: 2px;
+}
+
+.sidebar-service .templates .service-name {
+  color: #8f9295;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.sidebar-service .templates .service-name_2 {
+  color: #8f9295;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.sidebar-service .templates .service-name_3 {
+  color: #8f9295;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 17px;
+}
+
+hr{
+  border: 1px solid #8f9295;
+}
+
+.sidebar-footer {
+  display: flex;
+}
+
+.sidebar-footer p {
+  color: #8f9295;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 13px;
+}
+
+.sidebar-footer .footer-name {
+  color: #8f9295;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 3px;
+  margin-left: 12px;
+}
+
+/* header */
+
+.header {
+  left: 14%;
+  width: 86%;
+  height: 5%;
+  background-color: #2f3437;
+  position: fixed;
+}
+
+.header-left {
+  display: flex;
+  width: 50%;
+  padding: 14px 10px 0 18px;
+  float: left;
+  overflow: hidden;
+}
+
+.header-left i {
+  color: #8f9295;
+  padding-right: 10px;
+}
+
+.header-left img {
+  width: 13px;
+  height: 13px;
+  margin-top: 2px;
+  padding: 0 10px 0 7px;
+}
+
+.header-left .header-name {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.header-right {
+  display: flex;
+  float: right;
+}
+
+.header-right p {
+  color: #ffffff;
+  font-size: 14px;
+  padding: 14px 10px;
+}
+
+.header-right i {
+  color: #ffffff;
+  padding: 16px 10px;
+}
+
+/* main */
+
+.main-background-1 {
+  top: 10%;
+  width: 86%;
+  height: 370px;
+  background-color: #f9bf52;
+  margin-left: 14%;
+}
+
+.main-background-2 {
+  top: 50%;
+  background-color: #2f3437;
+  width: 86%;
+  height: 1100px;
+  margin-left: 14%;
+}
+
+.main-background-2 img {
+  margin-left: 27%;
 }
