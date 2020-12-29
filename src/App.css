@@ -38,7 +38,6 @@
 }
 
 .sidebar-header i {
-  margin-top: 3px;
   margin-left: 8px;
   color: #8f9295;
 }
@@ -51,7 +50,6 @@
 
 .sidebar-setting i {
   color: #8f9295;
-  margin-top: 4px;
 }
 
 .sidebar-setting .setting-name {
@@ -69,7 +67,6 @@
 
 .sidebar-settings i {
   color: #8f9295;
-  margin-top: 2px;
   font-weight: bold;
 }
 
@@ -95,7 +92,6 @@
 .sidebar-addpage .todolist i {
   color: #8f9295;
   margin-left: 3px;
-  margin-top: 3px;
 }
 
 .sidebar-addpage .todolist img {
@@ -144,7 +140,6 @@
 
 .sidebar-service .templates i {
   color: #8f9295;
-  margin-top: 2px;
 }
 
 .sidebar-service .templates .service-name {
@@ -258,8 +253,4 @@ hr{
   width: 86%;
   height: 1100px;
   margin-left: 14%;
-}
-
-.main-background-2 img {
-  margin-left: 27%;
 }

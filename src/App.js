@@ -1,5 +1,22 @@
 import './App.css';
-import './reset.css'
+import './reset.css';
+import img from './img/day.jpg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSort,
+  faSearch,
+  faClock,
+  faCog,
+  faCaretRight,
+  faMailBulk,
+  faDownload,
+  faTrash,
+  faArrowLeft,
+  faArrowRight,
+  faEllipsisH
+} from "@fortawesome/free-solid-svg-icons";
+
+const ICONS = [faSort];
 
 function App() {
   return (
@@ -8,26 +25,26 @@ function App() {
         <div className="sidebar-header">
             <p>G</p>
             <div className="name">GamJarin</div>
-            <i className="fas fa-sort"></i>
+            <i><FontAwesomeIcon icon={faSort} /></i>
         </div>
 
         <div className="sidebar-setting">
-            <i className="fas fa-search"></i>
+            <i><FontAwesomeIcon icon={faSearch} /></i>
             <div className="setting-name">Quick Find</div>
         </div>
         <div className="sidebar-settings">
-            <i className="far fa-clock"></i>
+            <i><FontAwesomeIcon icon={faClock} /></i>
             <div className="setting-name">All Updates</div>
         </div>
         <div className="sidebar-settings">
-            <i className="fas fa-cog"></i>
+            <i><FontAwesomeIcon icon={faCog} /></i>
             <div className="setting-name">Settings & Members</div>
         </div>
 
         <div className="sidebar-addpage">
             <div className="todolist">
-                <i className="fas fa-caret-right"></i>
-                <img src="./image/day.jpg" />
+                <i><FontAwesomeIcon icon={faCaretRight} /></i>
+                <img src={img}/>
                 <div className="addpage-name">To Do List</div>
             </div>
         </div>
@@ -38,19 +55,19 @@ function App() {
 
         <div className="sidebar-service">
             <div className="templates">
-                <i className="fas fa-mail-bulk"></i>
+                <i><FontAwesomeIcon icon={faMailBulk} /></i>
                 <div className="service-name">Templates</div>
             </div>
             <div className="templates">
-                <i className="fas fa-download"></i>
+                <i><FontAwesomeIcon icon={faDownload} /></i>
                 <div className="service-name_2">Import</div>
             </div>
             <div className="templates">
-                <i className="fas fa-trash"></i>
+                <i><FontAwesomeIcon icon={faTrash} /></i>
                 <div className="service-name_3">Trash</div>
             </div>
         </div>
-        {/* <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> */}
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <hr />
         <div className="sidebar-footer">
             <p>+</p>
@@ -60,9 +77,9 @@ function App() {
 
     <div className="header">
         <div className="header-left">
-            <i className="fas fa-arrow-left"></i>
-            <i className="fas fa-arrow-right"></i>
-            <img src="./image/day.jpg" />
+            <i><FontAwesomeIcon icon={faArrowLeft} /></i>
+            <i><FontAwesomeIcon icon={faArrowRight} /></i>
+            <img src={img} />
             <div className="header-name">To Do List</div>
         </div>
 
@@ -70,14 +87,14 @@ function App() {
             <p>Share</p>
             <p>Updates</p>
             <p>Favorite</p>
-            <i className="fas fa-ellipsis-h"></i>
+            <i><FontAwesomeIcon icon={faEllipsisH} /></i>
         </div>
     </div>
 
     <div className="main">
         <div className="main-background-1"></div>
         <div className="main-background-2">
-            <img src="./image/day.jpg" alt="" />
+            <img src={img} />
         </div>
     </div>
     </div>
