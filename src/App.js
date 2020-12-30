@@ -19,7 +19,8 @@ import {
   faExpandAlt,
   faChevronDown,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
     <div className="App">
       <div className="sidebar">
         <div className="sidebar-header">
-            <p>G</p>
+            <i><FontAwesomeIcon icon={faStar} /></i>
             <div className="name">GamJarin</div>
             <i><FontAwesomeIcon icon={faSort} /></i>
         </div>
@@ -141,6 +142,66 @@ function App() {
                     <i><FontAwesomeIcon icon={faChevronRight} /></i>
                 </div>
             </div>
+            <div className="main-calendar">
+            <table>
+                <thead>
+                    <tr>
+                        <td>일</td>
+                        <td>월</td>
+                        <td>화</td>
+                        <td>수</td>
+                        <td>목</td>
+                        <td>금</td>
+                        <td>토</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td className="first-line">29</td>
+                    <td>30</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td className="last-line">5</td>
+                </tr>
+                <tr>
+                    <td className="first-line">6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td className="last-line">12</td>
+                </tr>
+                <tr>
+                    <td className="first-line">13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td className="last-line">19</td>
+                </tr>
+                <tr>
+                    <td className="first-line">20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td className="last-line">26</td>
+                </tr>
+                <tr>
+                    <td className="first-line">27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>1</td>
+                    <td className="last-line">2</td>
+                </tr>
+            </table>
+        </div>
         </div>
     </div>
     </div>

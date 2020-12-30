@@ -16,20 +16,9 @@
 .sidebar::-webkit-scrollbar{ display:none; }
 
 .sidebar-header {
-  background-color: #8f9295;
-  width: 20px;
-  height: 20px;
-  border-radius: 2px;
   margin-top: 15px;
   margin-left: 18px;
   display: flex;
-}
-
-.sidebar-header p{
-  margin-left: 5px;
-  font-size: 13px;
-  font-weight: bold;
-  text-align: center;
 }
 
 .sidebar-header .name {
@@ -37,7 +26,7 @@
   font-weight: bold;
   color: #e2e3e3;
   display: flex;
-  margin-left: 17px;
+  margin-left: 12px;
 }
 
 .sidebar-header i {
@@ -95,6 +84,7 @@
 .sidebar-addpage .todolist i {
   color: #8f9295;
   margin-left: 3px;
+  margin-top: 3px;
 }
 
 .sidebar-addpage .todolist img {
@@ -109,6 +99,7 @@
   font-size: 13px;
   font-weight: bold;
   margin-left: 12px;
+  margin-top: 3px;
 }
 
 .sidebar-todolist {
@@ -120,7 +111,8 @@
   color: #8f9295;
   font-weight: bold;
   font-size: 20px;
-  margin-left: 1px;
+  margin-left: 4px;
+  margin-top: 3px;
 }
 
 .sidebar-todolist .addpage-name {
@@ -257,7 +249,7 @@ hr{
 .main-background-2 {
   background-color: #2f3437;
   width: 86%;
-  height: 1100px;
+  height: 1700px;
   margin-left: 14%;
 }
 
@@ -411,4 +403,37 @@ hr{
 .main .main-background-2 .main-schedule .schedule-bottom-right p {
   margin-right: 13px;
   color: #ffffff;
+}
+
+.main .main-background-2 .main-calendar {
+  position: relative;
+  left: 20%;
+  top: 130px;
+}
+
+.main .main-background-2 .main-calendar table {
+  border-collapse: collapse;
+  /* border: 1px solid #8f9295; */
+  text-align: right;
+  width: 56%;
+  height: 900px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.main .main-background-2 .main-calendar table thead tr td{
+  border: none;
+  text-align: center;
+  padding: 0 0 10px 0;
+  color: #8f9295;
+}
+
+.main .main-background-2 .main-calendar table td{
+  border: 1px solid #8f9295;
+  padding: 7px 8px 0 0;
+}
+
+.main .main-background-2 .main-calendar table .first-line,
+.main .main-background-2 .main-calendar table .last-line {
+  background-color: #555657;
 }
