@@ -1,6 +1,6 @@
-/* .App {
-  text-align: center;
-} */
+.App {
+  overflow-x: hidden
+}
 
 /* sidebar */
 .sidebar {
@@ -10,7 +10,10 @@
   float: left;
   overflow: auto;
   position: fixed;
+  -ms-overflow-style: none;
 }
+
+.sidebar::-webkit-scrollbar{ display:none; }
 
 .sidebar-header {
   background-color: #8f9295;
@@ -268,7 +271,7 @@ hr{
   position: relative;
   left: 20%;
   color: #ffffff;
-  font-size: 50px;
+  font-size: 48px;
   font-weight: bold;
   letter-spacing: -2px;
 }
@@ -278,6 +281,7 @@ hr{
   left: 20%;
   top: 35px;
   color: #ffffff;
+  font-weight: bold;
 }
 
 .main .main-background-2 .main-icon {
@@ -303,7 +307,7 @@ hr{
 .main .main-background-2 .main-icon .icon-company {
   display: flex;
   position: relative;
-  left: 43%;
+  left: 45%;
   top: 70px;
   color: #ffffff;
   font-size: 16px;
@@ -315,3 +319,49 @@ hr{
   text-underline-position: under;
   text-decoration-color: #474c50;
 }
+
+.main .main-background-2 .main-schedule .schedule-title {
+  position: relative;
+  left: 20%;
+  top: 110px;
+}
+
+.main .main-background-2 .main-schedule .schedule-title p {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.main .main-background-2 .main-schedule .schedule-right {
+  display: flex;
+  position: relative;
+  top: 91px;
+  left: 61%;
+  color: #8f9295;
+}
+
+.main .main-background-2 .main-schedule .schedule-right p {
+  margin-left: 8px;
+}
+
+.main .main-background-2 .main-schedule .schedule-right i {
+  margin-left: 20px;
+}
+
+.main .main-background-2 .main-schedule button {
+  display: flex;
+  position: relative;
+  top: 69px;
+  left: 71%;
+}
+
+.main .main-background-2 .main-schedule hr {
+  width: 56%;
+  position: relative;
+  top: 70px;
+  right: 2%;
+  border: 0;
+  height: 1px;
+  background-color: #8f9295;
+}
+

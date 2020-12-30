@@ -15,7 +15,9 @@ import {
   faArrowRight,
   faEllipsisH,
   faGraduationCap,
-  faLaptop
+  faLaptop,
+  faExpandAlt,
+  faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
@@ -103,13 +105,29 @@ function App() {
             </div>
             <div className="main-icon">
                 <div className="icon-school">
-                    <FontAwesomeIcon icon={faGraduationCap} />
+                    <i><FontAwesomeIcon icon={faGraduationCap} /></i>
                     <p>근로</p>
                 </div>
                 <div className="icon-company">
-                    <FontAwesomeIcon icon={faLaptop} />
+                    <i><FontAwesomeIcon icon={faLaptop} /></i>
                     <p>인턴</p>
                 </div>
+            </div>
+            <div className="main-schedule">
+                <div className="schedule-title">
+                    <p>일정</p>
+                </div>
+                <div className="schedule-right">
+                    <i><FontAwesomeIcon icon={faSearch} className="right-icon" /></i>
+                    <p>검색</p>
+                    <i><FontAwesomeIcon icon={faExpandAlt} className="right-icon" /></i>
+                    <i><FontAwesomeIcon icon={faEllipsisH} className="right-icon" /></i>
+                </div>
+                <button>
+                        <p>새로고침</p>
+                        <i><FontAwesomeIcon icon={faChevronDown} /></i>
+                </button>
+                <hr />    
             </div>
         </div>
     </div>
