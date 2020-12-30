@@ -17,7 +17,9 @@ import {
   faGraduationCap,
   faLaptop,
   faExpandAlt,
-  faChevronDown
+  faChevronDown,
+  faChevronLeft,
+  faChevronRight
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
@@ -123,11 +125,21 @@ function App() {
                     <i><FontAwesomeIcon icon={faExpandAlt} className="right-icon" /></i>
                     <i><FontAwesomeIcon icon={faEllipsisH} className="right-icon" /></i>
                 </div>
-                <button>
-                        <p>새로고침</p>
+                <div className="btn_group">
+                    <button className="test_btn1">새로 만들기</button>
+                    <button className="test_btn2">
                         <i><FontAwesomeIcon icon={faChevronDown} /></i>
-                </button>
-                <hr />    
+                    </button>
+                </div>
+                <hr />
+                <div className="schedule-bottom">
+                    <p>2020년 12월</p>
+                </div>
+                <div className="schedule-bottom-right">
+                    <i><FontAwesomeIcon icon={faChevronLeft} /></i>
+                    <p>오늘</p>
+                    <i><FontAwesomeIcon icon={faChevronRight} /></i>
+                </div>
             </div>
         </div>
     </div>

@@ -328,7 +328,7 @@ hr{
 
 .main .main-background-2 .main-schedule .schedule-title p {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -336,7 +336,7 @@ hr{
   display: flex;
   position: relative;
   top: 91px;
-  left: 61%;
+  left: 60%;
   color: #8f9295;
 }
 
@@ -348,11 +348,31 @@ hr{
   margin-left: 20px;
 }
 
-.main .main-background-2 .main-schedule button {
+.main .main-background-2 .main-schedule .btn_group{
   display: flex;
   position: relative;
-  top: 69px;
-  left: 71%;
+  top: 67px;
+  left: 70%;
+
+}
+
+.main .main-background-2 .main-schedule .btn_group button{
+  border: 0;
+  background-color: rgb(50, 179, 230);
+  color: white;
+  padding: 5px;
+}
+
+.main .main-background-2 .main-schedule .btn_group .test_btn1{
+  margin-right:-4px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.main .main-background-2 .main-schedule .btn_group .test_btn2{
+  margin-right:-3px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .main .main-background-2 .main-schedule hr {
@@ -365,3 +385,30 @@ hr{
   background-color: #8f9295;
 }
 
+.main .main-background-2 .main-schedule .schedule-bottom {
+  position: relative;
+  left: 20%;
+  top: 80px;
+}
+
+.main .main-background-2 .main-schedule .schedule-bottom p {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.main .main-background-2 .main-schedule .schedule-bottom-right {
+  display: flex;
+  position: relative;
+  top: 62px;
+  left: 71%;
+}
+
+.main .main-background-2 .main-schedule .schedule-bottom-right i{
+  margin-right: 13px;
+  color: #8f9295;
+}
+
+.main .main-background-2 .main-schedule .schedule-bottom-right p {
+  margin-right: 13px;
+  color: #ffffff;
+}
