@@ -13,10 +13,10 @@ import {
   faTrash,
   faArrowLeft,
   faArrowRight,
-  faEllipsisH
+  faEllipsisH,
+  faGraduationCap,
+  faLaptop
 } from "@fortawesome/free-solid-svg-icons";
-
-const ICONS = [faSort];
 
 function App() {
   return (
@@ -67,7 +67,7 @@ function App() {
                 <div className="service-name_3">Trash</div>
             </div>
         </div>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <div className="empty"></div>
         <hr />
         <div className="sidebar-footer">
             <p>+</p>
@@ -95,6 +95,22 @@ function App() {
         <div className="main-background-1"></div>
         <div className="main-background-2">
             <img src={img} />
+            <div className="main-title">
+                To Do List
+            </div>
+            <div className="main-subtitle">
+                Calendar_App with Notion
+            </div>
+            <div className="main-icon">
+                <div className="icon-school">
+                    <FontAwesomeIcon icon={faGraduationCap} />
+                    <p>근로</p>
+                </div>
+                <div className="icon-company">
+                    <FontAwesomeIcon icon={faLaptop} />
+                    <p>인턴</p>
+                </div>
+            </div>
         </div>
     </div>
     </div>
