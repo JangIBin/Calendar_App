@@ -1,3 +1,6 @@
+// router
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 // CSS, Image
 import './App.css';
 import './reset.css';
@@ -30,14 +33,17 @@ import {
 import Sidebar from "./components/Sidebar"; 
 import Header from "./components/Header";
 import Main from './components/Main';
+import Add from './components/Add';
 
 function App() {
   return (
     <div className="App">
-        
-        <Sidebar />
-        <Header />
-        <Main />
+      <Sidebar />
+      <Header />
+      <Router>
+        <Route path="/" component={Main} exact />
+        <Route path="/test" component={Add} />
+      </Router>
 
     </div>
   );

@@ -1,4 +1,5 @@
 import React, {component} from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 // CSS, Image
 import './Main.css';
@@ -27,9 +28,15 @@ import {
   faStar
 } from "@fortawesome/free-solid-svg-icons";
 
+import Sidebar from './Sidebar';
+import Header from './Header';
+
 function Main() {
     return (
         <div className="Main">
+
+            {/* <Sidebar />
+            <Header /> */}
             <div className="main">
                 <div className="main-background-1"></div>
                 <div className="main-background-2">
@@ -71,7 +78,7 @@ function Main() {
                                 <hr />
                             </div>
                             <div className="schedule-bottom">
-                                <p>2020년 12월</p>
+                                <p>2021년 1월</p>
                             </div>
                             <div className="schedule-bottom-right">
                                 <i><FontAwesomeIcon icon={faChevronLeft} /></i>
@@ -93,49 +100,63 @@ function Main() {
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <td className="first-line">29</td>
-                                    <td>30</td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td className="last-line">5</td>
-                                </tr>
-                                <tr>
-                                    <td className="first-line">6</td>
-                                    <td>7</td>
-                                    <td>8</td>
-                                    <td>9</td>
-                                    <td>10</td>
-                                    <td>11</td>
-                                    <td className="last-line">12</td>
-                                </tr>
-                                <tr>
-                                    <td className="first-line">13</td>
-                                    <td>14</td>
-                                    <td>15</td>
-                                    <td>16</td>
-                                    <td>17</td>
-                                    <td>18</td>
-                                    <td className="last-line">19</td>
-                                </tr>
-                                <tr>
-                                    <td className="first-line">20</td>
-                                    <td>21</td>
-                                    <td>22</td>
-                                    <td>23</td>
-                                    <td>24</td>
-                                    <td>25</td>
-                                    <td className="last-line">26</td>
-                                </tr>
-                                <tr>
                                     <td className="first-line">27</td>
                                     <td>28</td>
                                     <td>29</td>
                                     <td>30</td>
                                     <td>31</td>
-                                    <td>1</td>
+                                    <td>
+                                        1
+                                        <br />
+                                        <br />
+                                        <Link to="/test"><p>새해</p></Link>
+                                    </td>
                                     <td className="last-line">2</td>
+                                </tr>
+                                <tr>
+                                    <td className="first-line">3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td className="last-line">9</td>
+                                </tr>
+                                <tr>
+                                    <td className="first-line">10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                    <td>13</td>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td className="last-line">16</td>
+                                </tr>
+                                <tr>
+                                    <td className="first-line">17</td>
+                                    <td>18</td>
+                                    <td>19</td>
+                                    <td>20</td>
+                                    <td>21</td>
+                                    <td>22</td>
+                                    <td className="last-line">23</td>
+                                </tr>
+                                <tr>
+                                    <td className="first-line">24</td>
+                                    <td>25</td>
+                                    <td>26</td>
+                                    <td>27</td>
+                                    <td>28</td>
+                                    <td>29</td>
+                                    <td className="last-line">30</td>
+                                </tr>
+                                <tr>
+                                <td className="first-line">31</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td className="last-line">6</td>
                                 </tr>
                             </table>
                         </div>
