@@ -106,10 +106,10 @@ function Main() {
                                     <td>30</td>
                                     <td>31</td>
                                     <td>
-                                        1
-                                        <br />
-                                        <br />
-                                        <Link to="/test"><p>새해</p></Link>
+                                        <label>1</label>
+                                        <div className="td-link">
+                                            <Link to="/test"><p>새해</p></Link>
+                                        </div>
                                     </td>
                                     <td className="last-line">2</td>
                                 </tr>

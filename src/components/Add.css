@@ -1,3 +1,41 @@
-h2 {
-    padding: 5% 0 0 20%;
+.add {
+    width: 100%;
+    height: 1000px;
+    margin-left: 14%;
+    margin-top: 48px;
+}
+
+.add .add-background {
+    width: 86%;
+    height: 100%;
+    background-color: #2f3437;
+}
+
+.add .add-background .add-background-wrap {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.add .add-background .add-background-wrap .background-wrap-title {
+    padding-top: 20%;
+}
+
+.add .add-background .add-background-wrap .background-wrap-title span {
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: bold; 
+}
+
+.add .add-background .add-background-wrap .background-wrap-create {
+    color: #8f9295;
+    margin-top: 3%;
+}
+
+.add .add-background .add-background-wrap .background-wrap-create i {
+    margin-right: 10px;
+}
+
+.add .add-background .add-background-wrap .background-wrap-create .created {
+    margin-right: 10px;
+    font-weight: bold;
 }
