@@ -238,30 +238,33 @@ hr{
 
 /* main */
 
-.main-background-1 {
-  top: 10%;
-  width: 86%;
-  height: 370px;
-  background-color: #f9bf52;
+.main {
   margin-left: 14%;
+  margin-top: 3%;
+}
+
+.main-background-1 {
+  width: 100%;
+  height: 350px;
+  background-color: #f9bf52;
 }
 
 .main-background-2 {
   background-color: #2f3437;
-  width: 86%;
+  width:100%;
   height: 1700px;
-  margin-left: 14%;
 }
 
 .main .main-background-2 img {
-  position: relative;
-  left: 20%;
-  bottom: 35px;
+  padding-bottom: 35px;
+}
+
+.main .main-background-2 .background-2-wrap {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .main .main-background-2 .main-title {
-  position: relative;
-  left: 20%;
   color: #ffffff;
   font-size: 48px;
   font-weight: bold;
@@ -269,22 +272,18 @@ hr{
 }
 
 .main .main-background-2 .main-subtitle {
-  position: relative;
-  left: 20%;
-  top: 35px;
+  margin-top: 35px;
   color: #ffffff;
   font-weight: bold;
 }
 
 .main .main-background-2 .main-icon {
   display: flex;
+  margin-top: 35px;
 }
 
 .main .main-background-2 .main-icon .icon-school {
   display: flex;
-  position: relative;
-  left: 20%;
-  top: 70px;
   color: #ffffff;
   font-size: 16px;
 }
@@ -298,9 +297,7 @@ hr{
 
 .main .main-background-2 .main-icon .icon-company {
   display: flex;
-  position: relative;
-  left: 45%;
-  top: 70px;
+  margin-left: 45%;
   color: #ffffff;
   font-size: 16px;
 }
@@ -312,10 +309,13 @@ hr{
   text-decoration-color: #474c50;
 }
 
+.main .main-background-2 .main-schedule {
+  margin-top: 35px;
+}
+
 .main .main-background-2 .main-schedule .schedule-title {
-  position: relative;
-  left: 20%;
-  top: 110px;
+  float: left;
+  width: 50px;
 }
 
 .main .main-background-2 .main-schedule .schedule-title p {
@@ -326,9 +326,9 @@ hr{
 
 .main .main-background-2 .main-schedule .schedule-right {
   display: flex;
-  position: relative;
-  top: 91px;
-  left: 60%;
+  margin-top: 5px;
+  margin-left: 59%;
+  float: left;
   color: #8f9295;
 }
 
@@ -342,10 +342,8 @@ hr{
 
 .main .main-background-2 .main-schedule .btn_group{
   display: flex;
-  position: relative;
-  top: 67px;
-  left: 70%;
-
+  float: right;
+  margin-right: 3px;
 }
 
 .main .main-background-2 .main-schedule .btn_group button{
@@ -367,20 +365,20 @@ hr{
   border-bottom-right-radius: 5px;
 }
 
-.main .main-background-2 .main-schedule hr {
-  width: 56%;
-  position: relative;
-  top: 70px;
-  right: 2%;
+.main .main-background-2 .main-schedule .schedule-hr {
+  padding-top: 4%;
+}
+
+.main .main-background-2 .main-schedule .schedule-hr hr {
+  width: 100%;
   border: 0;
   height: 1px;
   background-color: #8f9295;
 }
 
 .main .main-background-2 .main-schedule .schedule-bottom {
-  position: relative;
-  left: 20%;
-  top: 80px;
+  margin-top: 1%;
+  float: left;
 }
 
 .main .main-background-2 .main-schedule .schedule-bottom p {
@@ -390,9 +388,8 @@ hr{
 
 .main .main-background-2 .main-schedule .schedule-bottom-right {
   display: flex;
-  position: relative;
-  top: 62px;
-  left: 71%;
+  float: right;
+  margin-top: 1%;
 }
 
 .main .main-background-2 .main-schedule .schedule-bottom-right i{
@@ -406,16 +403,14 @@ hr{
 }
 
 .main .main-background-2 .main-calendar {
-  position: relative;
-  left: 20%;
-  top: 130px;
+  padding-top: 6%;
 }
 
 .main .main-background-2 .main-calendar table {
   border-collapse: collapse;
   /* border: 1px solid #8f9295; */
   text-align: right;
-  width: 56%;
+  width: 100%;
   height: 900px;
   color: #ffffff;
   font-weight: bold;
