@@ -34,6 +34,8 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Main from './components/Main';
 import Add from './components/Add';
+import Intern from './components/Intern';
+import School from './components/School';
 
 function App() {
   return (
@@ -42,7 +44,9 @@ function App() {
       <Header />
       <Router>
         <Route path="/" component={Main} exact />
-        <Route path="/test" component={Add} />
+        <Route path="/add" component={Add} />
+        <Route path="/intern" component={Intern} />
+        <Route path="/school" component={School} />
       </Router>
 
     </div>

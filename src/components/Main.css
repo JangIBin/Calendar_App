@@ -48,10 +48,19 @@
 }
   
 .main .main-background-2 .main-icon .icon-school p {
+  color: #ffffff;
   margin-left: 10px;
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-color: #474c50;
+}
+
+.main .main-background-2 .main-icon .icon-school p:hover {
+  color: #f9bf52;
+}
+
+.main .main-background-2 .main-icon .icon-school p:active {
+  color: #ffffff;
 }
   
 .main .main-background-2 .main-icon .icon-company {
@@ -62,10 +71,19 @@
 }
   
 .main .main-background-2 .main-icon .icon-company p {
+  color: #ffffff;
   margin-left: 10px;
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-color: #474c50;
+}
+
+.main .main-background-2 .main-icon .icon-company p:hover {
+  color: #f9bf52;
+}
+
+.main .main-background-2 .main-icon .icon-company p:active {
+  color: #ffffff;
 }
   
 .main .main-background-2 .main-schedule {
@@ -199,6 +217,9 @@
 .main .main-background-2 .main-calendar table td p{
   float: left;
   color: #ffffff;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #8f9295;
 }
 
 .main .main-background-2 .main-calendar table td p:hover{

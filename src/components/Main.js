@@ -48,11 +48,11 @@ function Main() {
             <div className="main-icon">
               <div className="icon-school">
                 <i><FontAwesomeIcon icon={faGraduationCap} /></i>
-                <p>근로</p>
+                <Link to="/school"><p>학교</p></Link>
               </div>
               <div className="icon-company">
                 <i><FontAwesomeIcon icon={faLaptop} /></i>
-                <p>인턴</p>
+                <Link to="/intern"><p>인턴</p></Link>
               </div>
             </div>
             <div className="main-schedule">
@@ -105,18 +105,43 @@ function Main() {
               	  <td>
               	    <label>1</label>
               	    <div className="td-link">
-              	      <Link to="/test"><p>새해</p></Link>
+              	      <Link to="/add"><p>새해</p></Link>
               	    </div>
               	  </td>
               	  <td className="last-line">2</td>
               	</tr>
               	<tr>
               	  <td className="first-line">3</td>
-              	  <td>4</td>
-              	  <td>5</td>
-              	  <td>6</td>
-              	  <td>7</td>
-              	  <td>8</td>
+              	  <td>
+                    <label>4</label>
+                    <div className="td-link">
+                      <Link to="/intern"><p>인턴</p></Link>
+                    </div>
+                  </td>
+              	  <td>
+                    <label>5</label>
+                    <div className="td-link">
+                      <Link to="/intern"><p>인턴</p></Link>
+                    </div>
+                  </td>
+              	  <td>
+                    <label>6</label>
+                    <div className="td-link">
+                      <Link to="/intern"><p>인턴</p></Link>
+                    </div>
+                  </td>
+              	  <td>
+                    <label>7</label>
+                    <div className="td-link">
+                      <Link to="/intern"><p>인턴</p></Link>
+                    </div>
+                  </td>
+              	  <td>
+                    <label>8</label>
+                    <div className="td-link">
+                      <Link to="/intern"><p>인턴</p></Link>
+                    </div>
+                  </td>
               	  <td className="last-line">9</td>
               	</tr>
               	<tr>
