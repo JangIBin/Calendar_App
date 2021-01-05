@@ -28,25 +28,25 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
-    return(
-        <div className="Header">
-            <div className="header">
-                <div className="header-left">
-                    <i><FontAwesomeIcon icon={faArrowLeft} /></i>
-                    <i><FontAwesomeIcon icon={faArrowRight} /></i>
-                    <img src={img} />
-                    <div className="header-name">To Do List</div>
-                </div>
-
-                <div className="header-right">
-                    <p>Share</p>
-                    <p>Updates</p>
-                    <p>Favorite</p>
-                    <i><FontAwesomeIcon icon={faEllipsisH} /></i>
-                </div>
-            </div>
+  return(
+    <div className="Header">
+      <div className="header">
+        <div className="header-left">
+          <i><FontAwesomeIcon icon={faArrowLeft} /></i>
+          <i><FontAwesomeIcon icon={faArrowRight} /></i>
+          <img src={img} />
+          <div className="header-name">To Do List</div>
         </div>
-    )
+
+        <div className="header-right">
+          <p>Share</p>
+          <p>Updates</p>
+          <p>Favorite</p>
+          <i><FontAwesomeIcon icon={faEllipsisH} /></i>
+        </div>
+      </div>
+  	</div>
+  )
 }
 
 export default Header;
