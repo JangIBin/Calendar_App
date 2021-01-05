@@ -1,33 +1,11 @@
+import React, {useState} from 'react';
+
 // router
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // CSS, Image
 import './App.css';
 import './reset.css';
-import img from './img/day.jpg';
-
-// FontAwesomeIcon
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSort,
-  faSearch,
-  faClock,
-  faCog,
-  faCaretRight,
-  faMailBulk,
-  faDownload,
-  faTrash,
-  faArrowLeft,
-  faArrowRight,
-  faEllipsisH,
-  faGraduationCap,
-  faLaptop,
-  faExpandAlt,
-  faChevronDown,
-  faChevronLeft,
-  faChevronRight,
-  faStar
-} from "@fortawesome/free-solid-svg-icons";
 
 // Components
 import Sidebar from "./components/Sidebar"; 
@@ -48,7 +26,6 @@ function App() {
         <Route path="/intern" component={Intern} />
         <Route path="/school" component={School} />
       </Router>
-
     </div>
   );
 }

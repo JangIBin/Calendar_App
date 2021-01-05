@@ -1,5 +1,6 @@
-import React, {component} from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import moment from 'moment';
 
 // CSS, Image
 import './Main.css';
@@ -32,6 +33,50 @@ import Sidebar from './Sidebar';
 import Header from './Header';
 
 function Main() {
+
+  const [getMoment, setMoment] = useState(moment());
+
+  const today = getMoment;
+  const firstWeek = today.clone().startOf('month').week();
+  const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
+
+  const calendarArr = () => {
+    let result = [];
+    let week = firstWeek;
+    for (week; week <= lastWeek; week++) {
+      result = result.concat(
+        <tr key={week}>
+          {
+            Array(7).fill(0).map((data, index) => {
+              let days = today.clone().startOf('year').week(week).startOf('week').add(index, 'day');
+
+              if(moment().format('YYYYMMDD') === days.format('YYYYMMDD')) {
+                return (
+                  <td key={index} style={{backgroundColor:'red'}}>
+                    <span>{days.format('D')}</span>
+                  </td>
+                );
+              } else if (days.format('MM') != today.format('MM')) {
+                return (
+                  <td key={index} style={{backgroundColor:'gray'}}>
+                    <span>{days.format('D')}</span>
+                  </td>
+                );
+              } else {
+                return (
+                  <td key={index}>
+                    <span>{days.format('D')}</span>
+                  </td>
+                );
+              }
+            })
+          }
+        </tr>
+      );
+    }
+    return result;
+  }
+
   return (
     <div className="Main">
       <div className="main">
@@ -74,113 +119,18 @@ function Main() {
               <div className="schedule-hr">
                 <hr />
               </div>
-              <div className="schedule-bottom">
-                <p>2021년 1월</p>
-              </div>
-              <div className="schedule-bottom-right">
-                <i><FontAwesomeIcon icon={faChevronLeft} /></i>
-                <p>오늘</p>
-                <i><FontAwesomeIcon icon={faChevronRight} /></i>
-              </div>
             </div>
             <div className="main-calendar">
+              <div className="calendar-control">
+                <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }}>이전달</button>
+                <span>{today.format('YYYY년 MM월')}</span>
+                <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }}>다음달</button>
+              </div>
               <table>
-                <thead>
-                  <tr>
-                    <td>일</td>
-                    <td>월</td>
-                    <td>화</td>
-                    <td>수</td>
-                    <td>목</td>
-                    <td>금</td>
-                    <td>토</td>
-                  </tr>
-                </thead>
-              	<tr>
-              	  <td className="first-line">27</td>
-              	  <td>28</td>
-              	  <td>29</td>
-              	  <td>30</td>
-              	  <td>31</td>
-              	  <td>
-              	    <label>1</label>
-              	    <div className="td-link">
-              	      <Link to="/add"><p>새해</p></Link>
-              	    </div>
-              	  </td>
-              	  <td className="last-line">2</td>
-              	</tr>
-              	<tr>
-              	  <td className="first-line">3</td>
-              	  <td>
-                    <label>4</label>
-                    <div className="td-link">
-                      <Link to="/intern"><p>인턴</p></Link>
-                    </div>
-                  </td>
-              	  <td>
-                    <label>5</label>
-                    <div className="td-link">
-                      <Link to="/intern"><p>인턴</p></Link>
-                    </div>
-                  </td>
-              	  <td>
-                    <label>6</label>
-                    <div className="td-link">
-                      <Link to="/intern"><p>인턴</p></Link>
-                    </div>
-                  </td>
-              	  <td>
-                    <label>7</label>
-                    <div className="td-link">
-                      <Link to="/intern"><p>인턴</p></Link>
-                    </div>
-                  </td>
-              	  <td>
-                    <label>8</label>
-                    <div className="td-link">
-                      <Link to="/intern"><p>인턴</p></Link>
-                    </div>
-                  </td>
-              	  <td className="last-line">9</td>
-              	</tr>
-              	<tr>
-              	  <td className="first-line">10</td>
-              	  <td>11</td>
-              	  <td>12</td>
-              	  <td>13</td>
-              	  <td>14</td>
-              	  <td>15</td>
-              	  <td className="last-line">16</td>
-              	</tr>
-              	<tr>
-              	  <td className="first-line">17</td>
-              	  <td>18</td>
-              	  <td>19</td>
-              	  <td>20</td>
-              	  <td>21</td>
-              	  <td>22</td>
-              	  <td className="last-line">23</td>
-              	</tr>
-              	<tr>
-              	  <td className="first-line">24</td>
-              	  <td>25</td>
-              	  <td>26</td>
-              	  <td>27</td>
-              	  <td>28</td>
-              	  <td>29</td>
-              	  <td className="last-line">30</td>
-              	</tr>
-              	<tr>
-              	<td className="first-line">31</td>
-              	  <td>1</td>
-              	  <td>2</td>
-              	  <td>3</td>
-              	  <td>4</td>
-              	  <td>5</td>
-              	  <td className="last-line">6</td>
-              	</tr>
-            	</table>
+                <tbody>
+                  {calendarArr()}
+                </tbody>
+              </table>
           	</div>
         	</div>
       	</div>

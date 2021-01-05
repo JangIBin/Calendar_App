@@ -78,14 +78,6 @@
   text-decoration-color: #474c50;
 }
 
-.main .main-background-2 .main-icon .icon-company p:hover {
-  color: #f9bf52;
-}
-
-.main .main-background-2 .main-icon .icon-company p:active {
-  color: #ffffff;
-}
-  
 .main .main-background-2 .main-schedule {
   margin-top: 35px;
 }
@@ -154,32 +146,6 @@
   background-color: #8f9295;
 }
   
-.main .main-background-2 .main-schedule .schedule-bottom {
-  margin-top: 1%;
-  float: left;
-}
-  
-.main .main-background-2 .main-schedule .schedule-bottom p {
-  color: #ffffff;
-  font-weight: bold;
-}
-  
-.main .main-background-2 .main-schedule .schedule-bottom-right {
-  display: flex;
-  float: right;
-  margin-top: 1%;
-}
-  
-.main .main-background-2 .main-schedule .schedule-bottom-right i{
-  margin-right: 13px;
-  color: #8f9295;
-}
-  
-.main .main-background-2 .main-schedule .schedule-bottom-right p {
-  margin-right: 13px;
-  color: #ffffff;
-}
-  
 .main .main-background-2 .main-calendar {
   padding-top: 6%;
 }
@@ -220,17 +186,4 @@
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-color: #8f9295;
-}
-
-.main .main-background-2 .main-calendar table td p:hover{
-  color: #f9bf52;
-}
-
-.main .main-background-2 .main-calendar table td p:active{
-  color: #ffffff;
-}
-  
-.main .main-background-2 .main-calendar table .first-line,
-.main .main-background-2 .main-calendar table .last-line {
-  background-color: #555657;
 }
