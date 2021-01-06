@@ -39,6 +39,7 @@ function Main() {
   const today = getMoment;
   const firstWeek = today.clone().startOf('month').week();
   const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
+  const nowDate = moment(new Date);
 
   const calendarArr = () => {
     let result = [];
@@ -58,7 +59,7 @@ function Main() {
                 );
               } else if (days.format('MM') != today.format('MM')) {
                 return (
-                  <td key={index} style={{backgroundColor:'gray'}}>
+                  <td key={index} style={{color:'#8f9295'}}>
                     <span>{days.format('D')}</span>
                   </td>
                 );
@@ -122,11 +123,25 @@ function Main() {
             </div>
             <div className="main-calendar">
               <div className="calendar-control">
-                <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }}>이전달</button>
                 <span>{today.format('YYYY년 MM월')}</span>
-                <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }}>다음달</button>
+                <div className="control-btn">
+                  <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }}><i><FontAwesomeIcon icon={faChevronLeft}/></i></button>
+                  <button onClick={() => {}}>Today</button>
+                  <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }}><i><FontAwesomeIcon icon={faChevronRight}/></i></button>
+                </div>
               </div>
               <table>
+                <thead>
+                  <tr>
+                    <td>일</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td>토</td>
+                  </tr>
+                </thead>
                 <tbody>
                   {calendarArr()}
                 </tbody>
