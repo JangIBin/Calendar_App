@@ -28,25 +28,27 @@ import {
   faChevronRight,
   faStar
 } from "@fortawesome/free-solid-svg-icons";
-
-import Sidebar from './Sidebar';
-import Header from './Header';
+import styled from 'styled-components';
 
 function Main() {
 
   const [getMoment, setMoment] = useState(moment());
+  const [color, setColor] = useState('#2f3437');
+
+  const colorChange = () => {
+    setColor('backgroundColor:blue')
+  }
 
   const today = getMoment;
   const firstWeek = today.clone().startOf('month').week();
   const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
-  const nowDate = moment(new Date);
 
   const calendarArr = () => {
     let result = [];
     let week = firstWeek;
     for (week; week <= lastWeek; week++) {
       result = result.concat(
-        <tr key={week}>
+        <tr key={week} className="selected">
           {
             Array(7).fill(0).map((data, index) => {
               let days = today.clone().startOf('year').week(week).startOf('week').add(index, 'day');
@@ -126,7 +128,7 @@ function Main() {
                 <span>{today.format('YYYY년 MM월')}</span>
                 <div className="control-btn">
                   <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }}><i><FontAwesomeIcon icon={faChevronLeft}/></i></button>
-                  <button onClick={() => {}}>Today</button>
+                  <button onClick={colorChange}>Today</button>
                   <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }}><i><FontAwesomeIcon icon={faChevronRight}/></i></button>
                 </div>
               </div>

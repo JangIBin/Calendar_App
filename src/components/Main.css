@@ -192,6 +192,10 @@
   height: 150px;
 }
 
+.main .main-background-2 .main-calendar table tbody tr td:hover {
+  box-shadow: 2px 2px 10px #e6e2af inset;
+}
+
 .main .main-background-2 .main-calendar .calendar-control {
   /* display: flex; */
   margin-bottom: 3%;
