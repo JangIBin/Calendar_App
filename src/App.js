@@ -15,6 +15,8 @@ import Add from './components/Add';
 import Intern from './components/Intern';
 import School from './components/School';
 
+// import {Sidebar, Header, Main, Add, Intern, School} from './components'
+
 function App() {
   return (
     <div className="App">

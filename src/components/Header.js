@@ -1,30 +1,13 @@
 import React, {component} from 'react';
 
 // CSS, Image
-import './Header.css';
+import './style/Header.css';
 import img from '../img/day.jpg';
 
 // FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSort,
-  faSearch,
-  faClock,
-  faCog,
-  faCaretRight,
-  faMailBulk,
-  faDownload,
-  faTrash,
-  faArrowLeft,
-  faArrowRight,
-  faEllipsisH,
-  faGraduationCap,
-  faLaptop,
-  faExpandAlt,
-  faChevronDown,
-  faChevronLeft,
-  faChevronRight,
-  faStar
+  faArrowLeft, faArrowRight, faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {

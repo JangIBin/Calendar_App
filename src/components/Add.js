@@ -1,30 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-import './Add.css';
+import './style/Add.css';
 import '../reset.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSort,
-  faSearch,
-  faClock,
-  faCog,
-  faCaretRight,
-  faMailBulk,
-  faDownload,
-  faTrash,
-  faArrowLeft,
-  faArrowRight,
-  faEllipsisH,
-  faGraduationCap,
-  faLaptop,
-  faExpandAlt,
-  faChevronDown,
-  faChevronLeft,
-  faChevronRight,
-  faStar,
-  faCaretSquareDown
+  faClock, faCaretSquareDown
 } from "@fortawesome/free-solid-svg-icons";
 
 function Add() {

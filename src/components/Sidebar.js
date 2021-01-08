@@ -1,30 +1,14 @@
 import React, {component} from 'react';
 
 // CSS, Image
-import './Sidebar.css';
+import './style/Sidebar.css';
 import img from '../img/day.jpg';
 
 // FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSort,
-  faSearch,
-  faClock,
-  faCog,
-  faCaretRight,
-  faMailBulk,
-  faDownload,
-  faTrash,
-  faArrowLeft,
-  faArrowRight,
-  faEllipsisH,
-  faGraduationCap,
-  faLaptop,
-  faExpandAlt,
-  faChevronDown,
-  faChevronLeft,
-  faChevronRight,
-  faStar
+	faSort, faSearch, faClock, faCog, faCaretRight, faMailBulk, 
+	faDownload, faTrash, faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
