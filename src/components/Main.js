@@ -12,11 +12,12 @@ import {
   faSearch, faEllipsisH, faGraduationCap, faLaptop, faExpandAlt,
   faChevronDown, faChevronLeft, faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import Calendar from 'react-calendar';
 
 function Main() {
 
   const [getMoment, setMoment] = useState(moment());
-  const [color, setColor] = useState('#2f3437');
+  const [color, setColor] = useState('white');
 
   const today = getMoment;
   const firstWeek = today.clone().startOf('month').week();
@@ -107,7 +108,6 @@ function Main() {
                 <span>{today.format('YYYY년 MM월')}</span>
                 <div className="control-btn">
                   <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }}><i><FontAwesomeIcon icon={faChevronLeft}/></i></button>
-                  <button onClick={() => { setMoment(today) }}>Today</button>
                   <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }}><i><FontAwesomeIcon icon={faChevronRight}/></i></button>
                 </div>
               </div>
