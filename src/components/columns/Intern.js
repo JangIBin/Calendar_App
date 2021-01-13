@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-import './style/Intern.css';
-import '../reset.css';
+import './Intern.css';
+import '../../reset.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

@@ -12,8 +12,8 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Main from './components/Main';
 import Add from './components/Add';
-import Intern from './components/Intern';
-import School from './components/School';
+import Intern from './components/columns/Intern';
+import School from './components/columns/School';
 
 // import {Sidebar, Header, Main, Add, Intern, School} from './components'
 

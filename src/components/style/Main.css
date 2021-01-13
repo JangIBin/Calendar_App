@@ -191,19 +191,8 @@
   display: inline-block;
 }
 
-.main .main-background-2 .main-calendar .calendar-control {
-  /* display: flex; */
-  margin-bottom: 3%;
-}
-
 .main .main-background-2 .main-calendar .calendar-date {
   margin: 3px 0 0 20px;
-}
-
-.main .main-background-2 .main-calendar .calendar-control span {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 17px;
 }
 
 .thead {
