@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useRef } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import './Intern.css';
@@ -9,7 +9,52 @@ import {
   faClock, faCaretSquareDown
 } from "@fortawesome/free-solid-svg-icons";
 
+import AddComment from './AddComment';
+import CommentList from './CommentList';
+
 function Intern() {
+
+  const [inputs, setInputs] = useState({
+    comment: ''
+  });
+  const {comment} = inputs;
+  const onChange = (e) => {
+    const {name, value} = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value
+    });
+  };
+
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      comment: 'I do not want to go to school.'
+    },
+    {
+      id: 2,
+      comment: 'When to finish the assignment...'
+    },
+    {
+      id: 3,
+      comment: 'Do not end vacation'
+    }
+  ]);
+
+  const nextId = useRef(4);
+  const onSend = () => {
+    const user = {
+      id: nextId.current,
+      comment
+    };
+    setUsers([...users, user]);
+
+    setInputs({
+      comment: ''
+    });
+    nextId.current += 1;
+  }
+
   return (
     <div className="Intern">
       <div className="intern">
@@ -36,16 +81,13 @@ function Intern() {
                 <span>Weekday</span>
               </div>
             </div>
-            <div className="background-wrap-coment">
-              <hr />
-              <input type="text" placeholder="Add a comment..."/>
-              <hr />
-            </div>
+            <AddComment comment={comment} onChange={onChange} onSend={onSend} />
+            <CommentList users={users} />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Intern;
