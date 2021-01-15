@@ -184,11 +184,9 @@
 }
   
 .main .main-background-2 .main-calendar .table td{
-  width: 126px;
+  width: 150px;
   border: 1px solid #8f9295;
-  padding: 7px 8px 2px 5px;
   height: 150px;
-  display: inline-block;
 }
 
 .main .main-background-2 .main-calendar .calendar-date {

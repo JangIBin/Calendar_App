@@ -50,7 +50,7 @@ function CalendarApp() {
           <tr>
             {week.map((day) => (
               <td className="day" onClick={() => setValue(day)}>
-                <div className={dayStyles(day, value)}>
+                <div id="dayNum" className={dayStyles(day, value)}>
                   {day.format("D").toString()}
                 </div>
               </td>

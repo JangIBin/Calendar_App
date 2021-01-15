@@ -18,7 +18,7 @@ function Header() {
           <i><FontAwesomeIcon icon={faArrowLeft} /></i>
           <i><FontAwesomeIcon icon={faArrowRight} /></i>
           <img src={img} />
-          <div className="header-name">To Do List</div>
+          <div className="header-name">Calendar</div>
         </div>
 
         <div className="header-right">

@@ -29,32 +29,18 @@ function Sidebar() {
     	</div>
     	<div className="sidebar-settings">
     	  <i><FontAwesomeIcon icon={faCog} /></i>
-    	  <div className="setting-name">Settings & Members</div>
+    	  <div className="setting-name">Settings</div>
     	</div>
     	<div className="sidebar-addpage">
     	  <div className="todolist">
     	    <i><FontAwesomeIcon icon={faCaretRight} /></i>
     	    <img src={img}/>
-    	    <div className="addpage-name">To Do List</div>
+    	    <div className="addpage-name">Calendar</div>
     	  </div>
     	</div>
     	<div className="sidebar-todolist">
     	  <p>+</p>
     	  <div className="addpage-name">Add a page</div>
-    	</div>
-    	<div className="sidebar-service">
-    	  <div className="templates">
-    	    <i><FontAwesomeIcon icon={faMailBulk} /></i>
-    	    <div className="service-name">Templates</div>
-    	  </div>
-    	  <div className="templates">
-    	    <i><FontAwesomeIcon icon={faDownload} /></i>
-    	    <div className="service-name_2">Import</div>
-    	  </div>
-    	  <div className="templates">
-    	    <i><FontAwesomeIcon icon={faTrash} /></i>
-    	    <div className="service-name_3">Trash</div>
-    	  </div>
     	</div>
     	<div className="empty"></div>
     	<hr />

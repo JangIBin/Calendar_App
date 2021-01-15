@@ -25,7 +25,11 @@
 }
 
 .tbody .day-names .week {
-	margin-left: 65px;
-	margin-right: 61px;
+	margin-left: 6.5%;
+	margin-right: 6.3%;
 	color: #8f9295;
+}
+
+.tbody .day #dayNum {
+	margin: 4px 0 0 4px;
 }

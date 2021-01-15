@@ -24,7 +24,7 @@ function Main() {
           <div className="background-2-wrap">
             <img src={img} />
             <div className="main-title">
-              To Do List
+              Calendar
             </div>
             <div className="main-subtitle">
               Calendar_App with Notion
@@ -41,7 +41,7 @@ function Main() {
             </div>
             <div className="main-schedule">
               <div className="schedule-title">
-                <p>일정</p>
+                <p>Calendar</p>
               </div>
               <div className="schedule-right">
                 <i><FontAwesomeIcon icon={faSearch} className="right-icon" /></i>
