@@ -29,15 +29,15 @@ function Intern() {
   const [users, setUsers] = useState([
     {
       id: 1,
-      comment: 'I do not want to go to school.'
+      comment: '흐하하하하하'
     },
     {
       id: 2,
-      comment: 'When to finish the assignment...'
+      comment: '졸려어어어어어어어'
     },
     {
       id: 3,
-      comment: 'Do not end vacation'
+      comment: 'Zzzzzzzzzz...'
     }
   ]);
 
@@ -53,6 +53,11 @@ function Intern() {
       comment: ''
     });
     nextId.current += 1;
+  }
+
+  const onRemove = (id) => {
+    //user.id 가 id 인 것을 제거
+    setUsers(users.filter(user => user.id !== id));
   }
 
   return (
@@ -82,7 +87,7 @@ function Intern() {
               </div>
             </div>
             <AddComment comment={comment} onChange={onChange} onSend={onSend} />
-            <CommentList users={users} />
+            <CommentList users={users} onRemove={onRemove}  />
           </div>
         </div>
       </div>

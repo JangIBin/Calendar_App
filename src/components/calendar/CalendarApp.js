@@ -37,7 +37,7 @@ function CalendarApp() {
         </div>
         
       </div>
-      <tbody className="tbody-calendar">
+      <div className="tbody">
         <div className="day-names">
           {
             ["일", "월", "화", "수", "목", "금", "토"].map((d) => (
@@ -58,7 +58,7 @@ function CalendarApp() {
           </tr>
         ))
       }
-  	  </tbody>
+  	  </div>
     </div>
     
   )

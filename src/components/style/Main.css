@@ -163,13 +163,13 @@
   margin-top: 2%;
 }
   
-.main .main-background-2 .main-calendar table {
+.main .main-background-2 .main-calendar .table {
   border-collapse: collapse;
   color: #ffffff;
   font-weight: bold;
 }
   
-.main .main-background-2 .main-calendar table thead tr td{
+.main .main-background-2 .main-calendar .table thead tr td{
   border: none;
   text-align: center;
   padding: 0 0 15px 0;
@@ -178,13 +178,13 @@
   margin: 7.5px;
 }
 
-.main .main-background-2 .main-calendar table tbody tr td:nth-child(1),
-.main .main-background-2 .main-calendar table tbody tr td:nth-child(7) {
+.main .main-background-2 .main-calendar .table tbody tr td:nth-child(1),
+.main .main-background-2 .main-calendar .table tbody tr td:nth-child(7) {
   background-color: #474c50;
 }
   
-.main .main-background-2 .main-calendar table td{
-  width: 96px;
+.main .main-background-2 .main-calendar .table td{
+  width: 126px;
   border: 1px solid #8f9295;
   padding: 7px 8px 2px 5px;
   height: 150px;
