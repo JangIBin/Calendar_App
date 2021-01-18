@@ -87,7 +87,8 @@ function Intern() {
               </div>
             </div>
             <AddComment comment={comment} onChange={onChange} onSend={onSend} />
-            <CommentList users={users} onRemove={onRemove}  />
+            {/* onClick 을 사용하여 태그, 버튼 변환후 내용 수정후 세이브 버튼 클릭시 수정된 내용으로 돌아옴 */}
+            <CommentList users={users} onRemove={onRemove} />
           </div>
         </div>
       </div>

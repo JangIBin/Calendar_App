@@ -60,7 +60,6 @@ function CalendarApp() {
       }
   	  </div>
     </div>
-    
   )
 }
 

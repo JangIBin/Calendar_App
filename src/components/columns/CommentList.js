@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 
 function User({ user, onRemove }) {
   return (
@@ -9,14 +9,49 @@ function User({ user, onRemove }) {
   );
 }
 
-function CommentList({ users, onRemove }) {
+function UserModify({ user }) {
+  const [state, setState] = useState({name: user.comment});
+  
+  const handleChange = useCallback((e) => {
+    setState({
+      ...state,
+      name:e.target.value
+    });
+  },[]);
+
+  const { name } = state;
+
   return (
     <div>
-      {users.map(user => (
-        <User user={user} key={user.id} onRemove={onRemove} />
-      ))}
+      <input type="text" value={name} onChange={ handleChange }/>
+      <button>Save</button>
     </div>
   );
+}
+
+function CommentList({ users, onRemove }) {
+  const [show, setShow] = useState(true);
+  const toggleShow = () => setShow(!show);
+
+  if (show) {
+    return (
+      <div>
+        <button onClick={toggleShow}>Modify</button>
+        {users.map(user => (
+          <User user={user} key={user.id} onRemove={onRemove} />
+        ))}
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <button onClick={toggleShow}>Modify</button>
+        {users.map(user => (
+          <UserModify user={user} key={user.id} />
+        ))}
+      </div>
+    )
+  }
 }
 
 export default CommentList;
