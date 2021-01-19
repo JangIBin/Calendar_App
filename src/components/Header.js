@@ -1,4 +1,4 @@
-import React, {component} from 'react';
+import React from 'react';
 
 // CSS, Image
 import './style/Header.css';
@@ -17,7 +17,7 @@ function Header() {
         <div className="header-left">
           <i><FontAwesomeIcon icon={faArrowLeft} /></i>
           <i><FontAwesomeIcon icon={faArrowRight} /></i>
-          <img src={img} />
+          <img src={img} alt="day" />
           <div className="header-name">Calendar</div>
         </div>
 

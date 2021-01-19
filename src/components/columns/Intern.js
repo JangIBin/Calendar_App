@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import './Intern.css';
 import '../../reset.css';
@@ -60,6 +59,13 @@ function Intern() {
     setUsers(users.filter(user => user.id !== id));
   }
 
+  const onUpdate = (id, data, show) => {
+    setUsers(users.map(
+      user => id === user.id ? {...user, ...data} : user
+    ));
+    show = false;
+  }
+
   return (
     <div className="Intern">
       <div className="intern">
@@ -88,7 +94,7 @@ function Intern() {
             </div>
             <AddComment comment={comment} onChange={onChange} onSend={onSend} />
             {/* onClick 을 사용하여 태그, 버튼 변환후 내용 수정후 세이브 버튼 클릭시 수정된 내용으로 돌아옴 */}
-            <CommentList users={users} onRemove={onRemove} />
+            <CommentList users={users} onRemove={onRemove} onUpdate={onUpdate} />
           </div>
         </div>
       </div>

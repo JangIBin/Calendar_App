@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import moment from 'moment';
+import React from 'react';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 // CSS, Image
 import './style/Main.css';
@@ -9,8 +8,7 @@ import img from '../img/day.jpg';
 // FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSearch, faEllipsisH, faGraduationCap, faLaptop, faExpandAlt,
-  faChevronDown, faChevronLeft, faChevronRight,
+  faSearch, faEllipsisH, faGraduationCap, faLaptop, faExpandAlt, faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 
 import CalendarApp from './calendar/CalendarApp';
@@ -22,7 +20,7 @@ function Main() {
         <div className="main-background-1"></div>
         <div className="main-background-2">
           <div className="background-2-wrap">
-            <img src={img} />
+            <img src={img} alt="day" />
             <div className="main-title">
               Calendar
             </div>

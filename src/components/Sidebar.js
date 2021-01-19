@@ -1,4 +1,4 @@
-import React, {component} from 'react';
+import React from 'react';
 
 // CSS, Image
 import './style/Sidebar.css';
@@ -7,8 +7,7 @@ import img from '../img/day.jpg';
 // FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faSort, faSearch, faClock, faCog, faCaretRight, faMailBulk, 
-	faDownload, faTrash, faStar
+	faSort, faSearch, faClock, faCog, faCaretRight, faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
@@ -34,7 +33,7 @@ function Sidebar() {
     	<div className="sidebar-addpage">
     	  <div className="todolist">
     	    <i><FontAwesomeIcon icon={faCaretRight} /></i>
-    	    <img src={img}/>
+    	    <img src={img} alt="day" />
     	    <div className="addpage-name">Calendar</div>
     	  </div>
     	</div>

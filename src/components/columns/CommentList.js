@@ -9,7 +9,7 @@ function User({ user, onRemove }) {
   );
 }
 
-function UserModify({ user }) {
+function UserModify({ user, onUpdate }) {
   const [state, setState] = useState({name: user.comment});
   
   const handleChange = useCallback((e) => {
@@ -24,12 +24,12 @@ function UserModify({ user }) {
   return (
     <div>
       <input type="text" value={name} onChange={ handleChange }/>
-      <button>Save</button>
+      <button onClick={() => onUpdate(user.id)}>Save</button>
     </div>
   );
 }
 
-function CommentList({ users, onRemove }) {
+function CommentList({ users, onRemove, onUpdate }) {
   const [show, setShow] = useState(true);
   const toggleShow = () => setShow(!show);
 
@@ -47,7 +47,7 @@ function CommentList({ users, onRemove }) {
       <div>
         <button onClick={toggleShow}>Modify</button>
         {users.map(user => (
-          <UserModify user={user} key={user.id} />
+          <UserModify user={user} key={user.id} onUpdate={onUpdate} />
         ))}
       </div>
     )

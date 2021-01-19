@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import './School.css';
 import '../../reset.css';
