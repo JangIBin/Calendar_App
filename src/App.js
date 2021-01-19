@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 // router
@@ -12,7 +11,6 @@ import './reset.css';
 import Sidebar from "./components/Sidebar"; 
 import Header from "./components/Header";
 import Main from './components/Main';
-import Add from './components/Add';
 import Intern from './components/columns/Intern';
 import School from './components/columns/School';
 
@@ -25,7 +23,6 @@ function App() {
       <Header />
       <Router>
         <Route path="/" component={Main} exact />
-        <Route path="/add" component={Add} />
         <Route path="/intern" component={Intern} />
         <Route path="/school" component={School} />
       </Router>

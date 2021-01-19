@@ -46,8 +46,8 @@ function CalendarApp() {
           }
         </div>
       {
-        calendar.map((week) => (
-          <tr>
+        calendar.map((week, index) => (
+          <tr key={index}>
             {week.map((day) => (
               <td className="day" onClick={() => setValue(day)}>
                 <div id="dayNum" className={dayStyles(day, value)}>

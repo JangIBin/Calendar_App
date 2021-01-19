@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 // CSS, Image
 import './style/Main.css';
@@ -59,7 +59,7 @@ function Main() {
             </div>
             <div className="main-calendar">
               <div className="table">
-                <CalendarApp />
+                <CalendarApp  />
               </div>
           	</div>
         	</div>

@@ -16,14 +16,6 @@ function Intern() {
   const [inputs, setInputs] = useState({
     comment: ''
   });
-  const {comment} = inputs;
-  const onChange = (e) => {
-    const {name, value} = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value
-    });
-  };
 
   const [users, setUsers] = useState([
     {
@@ -39,6 +31,15 @@ function Intern() {
       comment: 'Zzzzzzzzzz...'
     }
   ]);
+
+  const {comment} = inputs;
+  const onChange = (e) => {
+    const {name, value} = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value
+    });
+  };
 
   const nextId = useRef(4);
   const onSend = () => {
@@ -59,11 +60,10 @@ function Intern() {
     setUsers(users.filter(user => user.id !== id));
   }
 
-  const onUpdate = (id, data, show) => {
+  const onUpdate = (id, data) => {
     setUsers(users.map(
       user => id === user.id ? {...user, ...data} : user
     ));
-    show = false;
   }
 
   return (
@@ -92,9 +92,8 @@ function Intern() {
                 <span>Weekday</span>
               </div>
             </div>
-            <AddComment comment={comment} onChange={onChange} onSend={onSend} />
-            {/* onClick 을 사용하여 태그, 버튼 변환후 내용 수정후 세이브 버튼 클릭시 수정된 내용으로 돌아옴 */}
-            <CommentList users={users} onRemove={onRemove} onUpdate={onUpdate} />
+            <AddComment onChange={onChange} onSend={onSend} />
+            <CommentList comment={comment} users={users} onRemove={onRemove} onUpdate={onUpdate} />
           </div>
         </div>
       </div>
