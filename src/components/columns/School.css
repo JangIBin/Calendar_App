@@ -53,22 +53,27 @@
   margin: 0 12px 0 1px;
 }
 
-.school .school-background .school-background-wrap .background-wrap-type .wrap-type-2 span{
+.school .school-background .school-background-wrap .background-wrap-type .wrap-type-2 select{  
   color: #ffffff;
-  margin-left: 130px;
+  background-color: #2f3437;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 126px;
 }
 
-.school .school-background .school-background-wrap .background-wrap-coment{
+.school .school-background .school-background-wrap .background-wrap-comment{
   margin-top: 30px;
 }
 
-.school .school-background .school-background-wrap .background-wrap-coment hr{
+.school .school-background .school-background-wrap .background-wrap-comment hr{
   border: 0;
   height: 1px;
   background-color: #8f9295;
 }
 
-.school .school-background .school-background-wrap .background-wrap-coment input{
+.school .school-background .school-background-wrap .background-wrap-comment input{
   border: 0;
   background-color: #2f3437;
   color: #ffffff;
@@ -79,7 +84,7 @@
   font-size: 15px;
 }
 
-.school .school-background .school-background-wrap .background-wrap-coment button{
+.school .school-background .school-background-wrap .background-wrap-comment button{
   float: right;
   margin-top: 7px;
   margin-right: 10px;
@@ -91,10 +96,31 @@
   border-radius: 4px;
 }
 
-.school .school-background .school-background-wrap .background-wrap-coment button:hover{
+.school .school-background .school-background-wrap .background-wrap-comment button:hover{
   background-color: rgb(33, 148, 194);
 }
 
-.school .school-background .school-background-wrap b{
+.school .school-background .school-background-wrap .background-wrap-commentlist {
   color: #ffffff;
+  margin-top: 40px;
+}
+
+.school .school-background .school-background-wrap .background-wrap-commentlist .commentlist-comment{
+  margin-top: 20px;
+}
+
+.school .school-background .school-background-wrap .background-wrap-commentlist .commentlist-comment button{
+  float: right;
+  margin-left: 8px;
+  padding: 1px 4px;
+  font-weight: bold;
+  border: 0;
+  background-color: rgb(50, 179, 230);
+  color: white;
+  outline: none;
+  border-radius: 2px;
+}
+
+.school .school-background .school-background-wrap .background-wrap-commentlist .commentlist-comment button:hover{
+  background-color: rgb(33, 148, 194);
 }

@@ -82,7 +82,10 @@ function School() {
                 <span className="type">Type</span>
               </div>
               <div className="wrap-type-2">
-                <span>Weekday</span>
+                <select className="selectDay" name="selectDay">
+                  <option value="holiday">Holiday</option>
+                  <option value="weekday">Weekday</option>
+                </select>
               </div>
             </div>
             <AddComment comment={comment} onChange={onChange} onSend={onSend} />

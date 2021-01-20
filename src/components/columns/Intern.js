@@ -20,15 +20,15 @@ function Intern() {
   const [users, setUsers] = useState([
     {
       id: 1,
-      comment: '흐하하하하하'
+      comment: '데이터 삭제, 추가, 수정 구현'
     },
     {
       id: 2,
-      comment: '졸려어어어어어어어'
+      comment: 'calendar에 일정추가하기'
     },
     {
       id: 3,
-      comment: 'Zzzzzzzzzz...'
+      comment: '프로젝트 완료하기'
     }
   ]);
 
@@ -60,9 +60,9 @@ function Intern() {
     setUsers(users.filter(user => user.id !== id));
   }
 
-  const onUpdate = (id, data) => {
+  const onUpdate = (id) => {
     setUsers(users.map(
-      user => id === user.id ? {...user, ...data} : user
+      user => id === user.id ? {...user, comment: !user.comment} : user
     ));
   }
 
@@ -89,7 +89,10 @@ function Intern() {
                 <span className="type">Type</span>
               </div>
               <div className="wrap-type-2">
-                <span>Weekday</span>
+                <select className="selectDay" name="selectDay">
+                  <option value="holiday">Holiday</option>
+                  <option value="weekday">Weekday</option>
+                </select>
               </div>
             </div>
             <AddComment onChange={onChange} onSend={onSend} />

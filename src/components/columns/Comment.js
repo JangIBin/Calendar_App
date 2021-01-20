@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Comment({ user, onRemove, onUpdate }) {
 
@@ -9,37 +9,39 @@ function Comment({ user, onRemove, onUpdate }) {
 
 	const toggleShow = () => setShow(!show);
 
-	const handleChange = useCallback((e) => {
+	const handleChange = (e) => {
     setState({
       ...state,
-      name:e.target.value
+      name: e.target.value
     });
-	},[]);
+	};
 
 	
 	useEffect(() => {
 		if (!show && show) {
 			setState({
-				name: user.comment
+				[name]: name
 			})
 		} else if (show && !show) {
 			onUpdate(user.id, {
-				name: state.name
-			})
+				[name]: user.comment
+			});
 		}
-	})
+	},[name])
+
+	
 
   if (show) {
     return (
-      <div>
+      <div className="commentlist-comment">
       	<input type="text" value={name} onChange={ handleChange }/>
 				<button onClick={() => toggleShow()}>저장</button>
     	</div>
     );
   } else {
     return (
-			<div>
-				<b>{user.comment}</b>
+			<div className="commentlist-comment">
+				<b>{name}</b>
 				<button onClick={() => onRemove(user.id)}>삭제</button>
 				<button onClick={() => toggleShow()}>수정</button>
 		</div>

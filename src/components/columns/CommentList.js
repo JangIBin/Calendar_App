@@ -4,7 +4,7 @@ import Comment from './Comment';
 
 function CommentList({ users, onRemove, onUpdate }) {
   return (
-    <div>
+    <div className="background-wrap-commentlist">
       {users.map(user => (
         <Comment user={user} key={user.id} onRemove={onRemove} onUpdate={onUpdate} />
       ))}

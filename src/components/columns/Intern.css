@@ -53,22 +53,27 @@
   margin: 0 12px 0 1px;
 }
 
-.intern .intern-background .intern-background-wrap .background-wrap-type .wrap-type-2 span{
+.intern .intern-background .intern-background-wrap .background-wrap-type .wrap-type-2 select{  
   color: #ffffff;
-  margin-left: 130px;
+  background-color: #2f3437;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 126px;
 }
 
-.intern .intern-background .intern-background-wrap .background-wrap-coment{
+.intern .intern-background .intern-background-wrap .background-wrap-comment{
   margin-top: 30px;
 }
 
-.intern .intern-background .intern-background-wrap .background-wrap-coment hr{
+.intern .intern-background .intern-background-wrap .background-wrap-comment hr{
   border: 0;
   height: 1px;
   background-color: #8f9295;
 }
 
-.intern .intern-background .intern-background-wrap .background-wrap-coment input{
+.intern .intern-background .intern-background-wrap .background-wrap-comment input{
   border: 0;
   background-color: #2f3437;
   color: #ffffff;
@@ -79,7 +84,7 @@
   font-size: 15px;
 }
 
-.intern .intern-background .intern-background-wrap .background-wrap-coment button{
+.intern .intern-background .intern-background-wrap .background-wrap-comment button{
   float: right;
   margin-top: 7px;
   margin-right: 10px;
@@ -91,10 +96,31 @@
   border-radius: 4px;
 }
 
-.intern .intern-background .intern-background-wrap .background-wrap-coment button:hover{
+.intern .intern-background .intern-background-wrap .background-wrap-comment button:hover{
   background-color: rgb(33, 148, 194);
 }
 
-.intern .intern-background .intern-background-wrap b{
+.intern .intern-background .intern-background-wrap .background-wrap-commentlist {
   color: #ffffff;
+  margin-top: 40px;
+}
+
+.intern .intern-background .intern-background-wrap .background-wrap-commentlist .commentlist-comment{
+  margin-top: 20px;
+}
+
+.intern .intern-background .intern-background-wrap .background-wrap-commentlist .commentlist-comment button{
+  float: right;
+  margin-left: 8px;
+  padding: 1px 4px;
+  font-weight: bold;
+  border: 0;
+  background-color: rgb(50, 179, 230);
+  color: white;
+  outline: none;
+  border-radius: 2px;
+}
+
+.intern .intern-background .intern-background-wrap .background-wrap-commentlist .commentlist-comment button:hover{
+  background-color: rgb(33, 148, 194);
 }
