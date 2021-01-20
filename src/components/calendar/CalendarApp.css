@@ -1,3 +1,35 @@
+.calendar-header {
+  margin-bottom: 20px;
+}
+
+.calendar-header span {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.calendar-header .control-btn {
+  float: right;
+}
+
+.calendar-header .control-btn button {
+  border: 0;
+  border-radius: 3px;
+  background-color: #2f3437;
+  width: 23px;
+  height: 23px;
+  margin-left: 10px;
+  outline: none;
+}
+
+.calendar-header .control-btn button:hover {
+  background-color: #474c50;
+}
+
+.calendar-header .control-btn i {
+  color: #8f9295;
+}
+
 .tbody .day div.before {
 	background-color: grey;
 	width: 21px;
@@ -19,12 +51,12 @@
 	border-radius: 50px;
 }
 
-.tbody .day-names {
+.day-names {
 	display: flex;
 	margin-bottom: 10px;
 }
 
-.tbody .day-names .week {
+.day-names .week {
 	margin-left: 6.5%;
 	margin-right: 6.3%;
 	color: #8f9295;

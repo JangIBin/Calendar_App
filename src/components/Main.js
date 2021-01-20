@@ -58,9 +58,7 @@ function Main() {
               </div>
             </div>
             <div className="main-calendar">
-              <div className="table">
-                <CalendarApp  />
-              </div>
+                  <CalendarApp  />
           	</div>
         	</div>
       	</div>

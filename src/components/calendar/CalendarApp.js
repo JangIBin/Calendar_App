@@ -29,22 +29,22 @@ function CalendarApp() {
 
   return (
     <div className="calendar">
-      <div className="thead">
+      <div className="calendar-header">
         <span>{value.format('YYYY년 MM월')}</span>
         <div className="control-btn">
           <button onClick={() => {setValue(prevMonth())}}><i><FontAwesomeIcon icon={faChevronLeft}/></i></button>
           <button onClick={() => {setValue(nextMonth())}}><i><FontAwesomeIcon icon={faChevronRight}/></i></button>
         </div>
-        
       </div>
-      <div className="tbody">
-        <div className="day-names">
-          {
-            ["일", "월", "화", "수", "목", "금", "토"].map((d) => (
-              <div className="week">{d}</div>
-            ))
-          }
-        </div>
+      <div className="day-names">
+      {
+        ["일", "월", "화", "수", "목", "금", "토"].map((d) => (
+          <div key={d} className="week">{d}</div>
+        ))
+      }
+    </div>
+    <table className="table">
+      <tbody className="tbody">
       {
         calendar.map((week, index) => (
           <tr key={index}>
@@ -58,8 +58,9 @@ function CalendarApp() {
           </tr>
         ))
       }
-  	  </div>
-    </div>
+  	  </tbody>
+    </table>    
+  </div>
   )
 }
 
