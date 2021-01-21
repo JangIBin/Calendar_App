@@ -8,9 +8,9 @@ import './App.css';
 import './reset.css';
 
 // Components
-import Sidebar from "./components/Sidebar"; 
-import Header from "./components/Header";
-import Main from './components/Main';
+import Sidebar from "./components/sidebar/Sidebar"; 
+import Header from "./components/header/Header";
+import Main from './components/main/Main';
 import Intern from './components/columns/Intern';
 import School from './components/columns/School';
 

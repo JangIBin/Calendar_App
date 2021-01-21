@@ -1,8 +1,8 @@
 import React from 'react';
 
 // CSS, Image
-import './style/Header.css';
-import img from '../img/day.jpg';
+import './Header.css';
+import img from '../../img/day.jpg';
 
 // FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

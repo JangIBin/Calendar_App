@@ -15,6 +15,8 @@ function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
 
+  const dayWeek = ["일", "월", "화", "수", "목", "금", "토"];
+
   useEffect(() => {
     setCalendar(buildCalendar(value));
   },[value]);
@@ -38,8 +40,8 @@ function CalendarApp() {
       </div>
       <div className="day-names">
       {
-        ["일", "월", "화", "수", "목", "금", "토"].map((d) => (
-          <div key={d} className="week">{d}</div>
+        dayWeek.map((d) => (
+          <div className="week">{d}</div>
         ))
       }
     </div>
@@ -52,6 +54,9 @@ function CalendarApp() {
               <td className="day" onClick={() => setValue(day)}>
                 <div id="dayNum" className={dayStyles(day, value)}>
                   {day.format("D").toString()}
+                </div>
+                <div className="dayButton">
+                  <button>+</button>
                 </div>
               </td>
             ))}

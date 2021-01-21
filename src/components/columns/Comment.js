@@ -15,7 +15,6 @@ function Comment({ user, onRemove, onUpdate }) {
       name: e.target.value
     });
 	};
-
 	
 	useEffect(() => {
 		if (!show && show) {
