@@ -10,6 +10,7 @@ import {
 
 import buildCalendar from "./build";
 import dayStyles from './styles';
+import ModalPage from '../modal/ModalPage';
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
@@ -56,7 +57,7 @@ function CalendarApp() {
                   {day.format("D").toString()}
                 </div>
                 <div className="dayButton">
-                  <button>+</button>
+                  <ModalPage />
                 </div>
               </td>
             ))}

@@ -61,7 +61,6 @@ function Main() {
             <div className="main-calendar">
               <CalendarApp  />
           	</div>
-            <ModalPage />
         	</div>
       	</div>
     	</div>
