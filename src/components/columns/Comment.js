@@ -29,7 +29,6 @@ function Comment({ user, onRemove, onUpdate }) {
 	},[name])
 
 	
-
   if (show) {
     return (
       <div className="commentlist-comment">

@@ -10,15 +10,51 @@
 }
 
 .Modal .modal-type {
-
+	margin-top: 25px;
+	margin-bottom: 25px;
+	display: flex;
 }
 
 .Modal .modal-type .modal-type-label {
 	color: #8f9295;
-	margin-top: 25px;
 	font-weight: bold;
 }
 
 .Modal .modal-type .modal-type-label i {
 	margin-right: 10px;
+}
+
+.Modal .modal-type .modal-type-select {
+	margin-left: 50px;
+}
+
+.Modal .modal-type .modal-type-select select {
+	color: #ffffff;
+	background-color: #2f3437;
+	border: 0;
+	outline: 0;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.Modal .commentModal input {
+	font-size: 16px;
+}
+
+.Modal .modifyButtonModal {
+	float: right;
+	margin-top: 8px;
+}
+
+.Modal .modifyButtonModal button {
+	border: 0;
+  background-color: rgb(50, 179, 230);
+  color: white;
+  padding: 5px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.Modal .modifyButtonModal button:hover {
+	background-color: rgb(33, 148, 194);
 }
