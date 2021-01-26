@@ -12,7 +12,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import CalendarApp from '../calendar/CalendarApp';
-import ModalPage from '../modal/ModalPage';
 
 function Main() {
   return (

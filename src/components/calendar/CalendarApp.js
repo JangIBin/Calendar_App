@@ -11,7 +11,6 @@ import {
 import buildCalendar from "./build";
 import dayStyles from './styles';
 import ModalPage from '../modal/ModalPage';
-import ModalList from '../modal/ModalList';
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
@@ -42,8 +41,8 @@ function CalendarApp() {
       </div>
       <div className="day-names">
       {
-        dayWeek.map((d) => (
-          <div className="week">{d}</div>
+        dayWeek.map((d, index) => (
+          <div key={index} className="week">{d}</div>
         ))
       }
     </div>
@@ -59,9 +58,6 @@ function CalendarApp() {
                 </div>
                 <div className="dayButton">
                   <ModalPage />
-                </div>
-                <div className="modal-list">
-                  <ModalList />
                 </div>
               </td>
             ))}

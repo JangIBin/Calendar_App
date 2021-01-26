@@ -41,10 +41,10 @@ function Intern() {
     });
   };
 
-  const nextId = useRef(4);
+  // const nextId = useRef(4);
   const onSend = () => {
     const user = {
-      id: nextId.current,
+      id:users.length+1,
       comment
     };
     setUsers([...users, user]);
@@ -52,7 +52,7 @@ function Intern() {
     setInputs({
       comment: ''
     });
-    nextId.current += 1;
+    users.length += 1;
   }
 
   const onRemove = (id) => {
