@@ -33,7 +33,7 @@ const ModalInput = ({users, title, comment, onChange, onSend, onRemove}) => {
 				<input name="comment" placeholder="Add a comment..." onChange={onChange} value={comment} />
 			</div>
 			<div className="modifyButtonModal">
-				<button onClick={onSend}>수정</button>
+				<button onClick={onSend}>저장</button>
 			</div>
 			<ModalList users={users} onRemove={onRemove} />
 		</div>

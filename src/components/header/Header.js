@@ -9,7 +9,7 @@ import img from '../../img/day.jpg';
 // FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowLeft, faArrowRight, faEllipsisH,
+  faArrowLeft, faArrowRight
 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {

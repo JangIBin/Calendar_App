@@ -16,17 +16,17 @@ function Comment({ user, onRemove, onUpdate }) {
     });
 	};
 	
-	useEffect(() => {
-		if (!show && show) {
-			setState({
-				[name]: name
-			})
-		} else if (show && !show) {
-			onUpdate(user.id, {
-				[name]: user.comment
-			});
-		}
-	},[name])
+	// useEffect(({user, show, onUpdate}) => {
+	// 	if (!show && show) {
+	// 		setState({
+	// 			[name]: name
+	// 		})
+	// 	} else if (show && !show) {
+	// 		onUpdate(user.id, {
+	// 			[name]: user.comment
+	// 		});
+	// 	}
+	// },[name])
 
 	
   if (show) {

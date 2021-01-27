@@ -11,7 +11,9 @@ import {
 import buildCalendar from "./build";
 import dayStyles from './styles';
 import ModalPage from '../modal/ModalPage';
-// import ModalList from '../modal/ModalList';
+
+import comment from '../modal/ModalComment';
+import ModalComment from '../modal/ModalComment';
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
@@ -60,6 +62,7 @@ function CalendarApp() {
                 <div className="dayButton">
                   <ModalPage />
                 </div>
+                {/* <ModalComment /> */}
               </td>
             ))}
           </tr>
