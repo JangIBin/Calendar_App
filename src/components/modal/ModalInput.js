@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'react-responsive-modal/styles.css';
 
 import './ModalInput.css';
@@ -8,7 +8,9 @@ import {
   faCaretSquareDown
 } from "@fortawesome/free-solid-svg-icons";
 
-const ModalInput = ({title, modalComment, onChange, onSend}) => {
+import ModalList from './ModalList';
+
+const ModalInput = ({users, title, comment, onChange, onSend, onRemove}) => {
 	
 	return(
 		<div className="Modal">
@@ -28,11 +30,12 @@ const ModalInput = ({title, modalComment, onChange, onSend}) => {
       </div>
 			<hr />
 			<div className="commentModal">
-				<input name="modalComment" placeholder="Add a comment..." onChange={onChange} value={modalComment} />
+				<input name="comment" placeholder="Add a comment..." onChange={onChange} value={comment} />
 			</div>
 			<div className="modifyButtonModal">
 				<button onClick={onSend}>수정</button>
 			</div>
+			<ModalList users={users} onRemove={onRemove} />
 		</div>
 	);
 };

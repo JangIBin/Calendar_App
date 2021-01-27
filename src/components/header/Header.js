@@ -1,5 +1,7 @@
 import React from 'react';
 
+import moment from 'moment';
+
 // CSS, Image
 import './Header.css';
 import img from '../../img/day.jpg';
@@ -11,6 +13,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
+
+  const nowTime = moment().format('YYYY년 MM월 DD일');
+
   return(
     <div className="Header">
       <div className="header">
@@ -22,10 +27,7 @@ function Header() {
         </div>
 
         <div className="header-right">
-          <p>Share</p>
-          <p>Updates</p>
-          <p>Favorite</p>
-          <i><FontAwesomeIcon icon={faEllipsisH} /></i>
+          <div>{nowTime}</div>
         </div>
       </div>
   	</div>

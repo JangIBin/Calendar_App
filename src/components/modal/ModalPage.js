@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 
@@ -11,10 +11,10 @@ const ModalPage = () => {
 
 	const [inputs, setInputs] = useState({
 		title:'',
-		modalComment:''
+		comment:''
 	});
 
-	const {title, modalComment} = inputs;
+	const {title, comment} = inputs;
 
 	const [users, setUsers] = useState([]);
 
@@ -31,21 +31,24 @@ const ModalPage = () => {
     });
 	};
 	
-	const nextId = useRef(1);
   const onSend = () => {
     const user = {
-			id: nextId.current,
-			test,
-			modalComment
+			id: users.length+1,
+			title,
+			comment
     };
     setUsers([...users, user]);
 
     setInputs({
-			test:'',
-			modalComment:''
+			title:'',
+			comment:''
     });
-    nextId.current += 1;
-  }
+    users.length += 1;
+	}
+	
+	const onRemove = (id) => {
+		setUsers(users.filter(user => user.id !== id))
+	}
 
 	useEffect(()=>{
 		if(openSecond===true && open === true){
@@ -60,7 +63,7 @@ const ModalPage = () => {
 				<ModalMenu onOpenSecondModal={onOpenSecondModal}/>
 			</Modal>
 			<Modal open={openSecond} onClose={onCloseSecondModal} center>
-				<ModalInput title={title} modalComment={modalComment} onChange={onChange} onSend={onSend} />
+				<ModalInput users={users} title={title} comment={comment} onChange={onChange} onSend={onSend} onRemove={onRemove} />
 			</Modal>
 		</div>
 	);

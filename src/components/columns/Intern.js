@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import './Intern.css';
 import '../../reset.css';
@@ -41,7 +41,6 @@ function Intern() {
     });
   };
 
-  // const nextId = useRef(4);
   const onSend = () => {
     const user = {
       id:users.length+1,

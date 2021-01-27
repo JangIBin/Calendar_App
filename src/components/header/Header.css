@@ -29,20 +29,14 @@
   .header-left .header-name {
     color: #ffffff;
     font-size: 14px;
+    font-weight: bold;
   }
   
   .header-right {
-    display: flex;
     float: right;
-  }
-  
-  .header-right p {
+    margin-top: 14px;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 15px;
     color: #ffffff;
-    font-size: 14px;
-    padding: 14px 10px;
-  }
-  
-  .header-right i {
-    color: #ffffff;
-    padding: 16px 10px;
   }
