@@ -62,17 +62,6 @@ function CalendarApp() {
       [name]: value
     });
   };
-  
-  const onComment = (day, user) => {
-    if(users.day === parseInt(day.format('D'))) {
-      return (
-        <div>{user.title}</div>,
-        <div>{user.comment}</div>
-      )
-    } else {
-      return null;
-    }
-  }
 
   useEffect(() => {
     setCalendar(buildCalendar(value));
@@ -116,9 +105,15 @@ function CalendarApp() {
                   <ModalPage users={users} title={title} comment={comment} onChange={onChange} onSend={()=>onSend(day)} onRemove={onRemove} />
                 </div>
                 <div className="dayComment">
-                  {users.map((user, index) => (
-                    <div key={index}>{user.title}</div>
-                  ))}
+                  {users.map((user, index) => 
+                      {
+                        if(user.day === parseInt(day.format('D'))) {
+                          return <div className="commentPlus" key={index}>{user.title}{user.comment}</div> 
+                        } else {
+                          return null;
+                        }
+                      }
+                  )}
                 </div>
               </td>
             ))}
