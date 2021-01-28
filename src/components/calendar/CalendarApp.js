@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import moment from 'moment';
 
 import './CalendarApp.css';
@@ -14,12 +14,65 @@ import ModalPage from '../modal/ModalPage';
 
 import comment from '../modal/ModalComment';
 import ModalComment from '../modal/ModalComment';
+import { useTheme } from 'styled-components';
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
 
+  const [users, setUsers] = useState([]);
+
+  const [inputs, setInputs] = useState({
+		title:'',
+		comment:''
+	});
+	const {title, comment} = inputs;
+
+
   const dayWeek = ["일", "월", "화", "수", "목", "금", "토"];
+
+  const nextId = useRef(1);
+  const onSend = (day) => {
+    day = parseInt(day.format('DD'));
+
+    const user = {
+			id: nextId.current,
+			title,
+      comment,
+      day
+    };
+    setUsers([...users, user]);
+
+    setInputs({
+			title:'',
+			comment:''
+    });
+    nextId.current += 1;
+  }
+  console.log(users);
+  
+	const onRemove = (id) => {
+		setUsers(users.filter(user => user.id !== id))
+  }
+  
+  const onChange = (e) => {
+    const {name, value} = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value
+    });
+  };
+  
+  const onComment = (day, user) => {
+    if(users.day === parseInt(day.format('D'))) {
+      return (
+        <div>{user.title}</div>,
+        <div>{user.comment}</div>
+      )
+    } else {
+      return null;
+    }
+  }
 
   useEffect(() => {
     setCalendar(buildCalendar(value));
@@ -54,15 +107,19 @@ function CalendarApp() {
       {
         calendar.map((week, index) => (
           <tr key={index}>
-            {week.map((day) => (
-              <td className="day" onClick={() => setValue(day)}>
+            {week.map((day, index, user) => (
+              <td className="day" onClick={() => setValue(day)} key={index}>
                 <div id="dayNum" className={dayStyles(day, value)}>
                   {day.format("D").toString()}
                 </div>
                 <div className="dayButton">
-                  <ModalPage />
+                  <ModalPage users={users} title={title} comment={comment} onChange={onChange} onSend={()=>onSend(day)} onRemove={onRemove} />
                 </div>
-                {/* <ModalComment /> */}
+                <div className="dayComment">
+                  {users.map((user, index) => (
+                    <div key={index}>{user.title}</div>
+                  ))}
+                </div>
               </td>
             ))}
           </tr>

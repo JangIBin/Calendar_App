@@ -5,50 +5,50 @@ import { Modal } from 'react-responsive-modal';
 import ModalMenu from './ModalMenu';
 import ModalInput from './ModalInput';
 
-const ModalPage = () => {
+const ModalPage = ({users, title, comment, onChange, onSend, onRemove}) => {
 	const [open, setOpen] = useState(false);
 	const [openSecond, setOpenSecond] = useState(false);
 
-	const [inputs, setInputs] = useState({
-		title:'',
-		comment:''
-	});
+	// const [inputs, setInputs] = useState({
+	// 	title:'',
+	// 	comment:''
+	// });
 
-	const {title, comment} = inputs;
+	// const {title, comment} = inputs;
 
-	const [users, setUsers] = useState([]);
+	// const [users, setUsers] = useState([]);
 
 	const onOpenModal = () => setOpen(true);
 	const onOpenSecondModal = () => setOpenSecond(true);
 	const onCloseModal = () => setOpen(false);
 	const onCloseSecondModal = () => setOpenSecond(false);
 
-	const onChange = (e) => {
-    const {name, value} = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value
-    });
-	};
+	// const onChange = (e) => {
+  //   const {name, value} = e.target;
+  //   setInputs({
+  //     ...inputs,
+  //     [name]: value
+  //   });
+	// };
 	
-  const onSend = () => {
-    const user = {
-			id: users.length+1,
-			title,
-			comment
-    };
-    setUsers([...users, user]);
+  // const onSend = () => {
+  //   const user = {
+	// 		id: users.length+1,
+	// 		title,
+	// 		comment
+  //   };
+  //   setUsers([...users, user]);
 
-    setInputs({
-			title:'',
-			comment:''
-    });
-    users.length += 1;
-	}
+  //   setInputs({
+	// 		title:'',
+	// 		comment:''
+  //   });
+  //   users.length += 1;
+	// }
 	
-	const onRemove = (id) => {
-		setUsers(users.filter(user => user.id !== id))
-	}
+	// const onRemove = (id) => {
+	// 	setUsers(users.filter(user => user.id !== id))
+	// }
 
 	useEffect(()=>{
 		if(openSecond===true && open === true){

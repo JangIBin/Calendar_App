@@ -52,6 +52,7 @@ function Intern() {
       comment: ''
     });
     users.length += 1;
+    console.log(user);
   }
 
   const onRemove = (id) => {
