@@ -126,6 +126,8 @@
   width: 150px;
   border: 1px solid #8f9295;
   height: 150px;
+  /* 테이블 컨텐츠 상단 고정 */
+  vertical-align: top;
 }
 
 .main .main-background-2 .main-calendar .calendar-date {

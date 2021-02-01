@@ -5,16 +5,12 @@ import './CalendarApp.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronLeft, faChevronRight,
+  faChevronLeft, faChevronRight, faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
 import buildCalendar from "./build";
 import dayStyles from './styles';
 import ModalPage from '../modal/ModalPage';
-
-import comment from '../modal/ModalComment';
-import ModalComment from '../modal/ModalComment';
-import { useTheme } from 'styled-components';
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
@@ -33,7 +29,7 @@ function CalendarApp() {
 
   const nextId = useRef(1);
   const onSend = (day) => {
-    day = parseInt(day.format('DD'));
+    day = parseInt(day.format('YYYYMMDD'));
 
     const user = {
 			id: nextId.current,
@@ -98,21 +94,39 @@ function CalendarApp() {
           <tr key={index}>
             {week.map((day, index, user) => (
               <td className="day" onClick={() => setValue(day)} key={index}>
-                <div id="dayNum" className={dayStyles(day, value)}>
-                  {day.format("D").toString()}
+                <div className="dayBundle">
+                  <div id="dayNum" className={dayStyles(day, value)}>
+                    {day.format("D").toString()}
+                  </div>
+                  <div className="dayButton">
+                    <ModalPage users={users} title={title} comment={comment} onChange={onChange} onSend={()=>onSend(day)} onRemove={onRemove} />
+                  </div>
                 </div>
-                <div className="dayButton">
-                  <ModalPage users={users} title={title} comment={comment} onChange={onChange} onSend={()=>onSend(day)} onRemove={onRemove} />
-                </div>
+                
                 <div className="dayComment">
                   {users.map((user, index) => 
-                      {
-                        if(user.day === parseInt(day.format('D'))) {
-                          return <div className="commentPlus" key={index}>{user.title}{user.comment}</div> 
-                        } else {
-                          return null;
-                        }
+                    {
+                      if(user.day === parseInt(day.format('YYYYMMDD'))) {
+                        return <div className="commentPlus" key={index}>
+                          <div className="plus">
+                            <div className="plusTitle">
+                              {(user.title).length >= 7 ? (user.title).substr(0,7)+"..." : user.title}
+                            </div>
+                            <div className="plusComment">
+                              {(user.comment).length >= 9 ? (user.comment).substr(0,9)+"..." : user.comment}
+                            </div>
+                          </div>
+                          
+                          <div className="plusButton">
+                            <button onClick={() => onRemove(user.id)}>
+                              <i><FontAwesomeIcon icon={faTrash}/></i>
+                            </button>
+                          </div>
+                        </div> 
+                      } else {
+                        return null;
                       }
+                    }
                   )}
                 </div>
               </td>

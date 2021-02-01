@@ -73,7 +73,7 @@
 	margin-right: 4px;
 }
 
-.tbody .day button {
+.tbody .day .dayButton button {
 	border: 0;
 	background-color: #414649;
 	color: #ffffff;
@@ -90,7 +90,57 @@
 	transform: scale(1);
 }
 
+.tbody .dayBundle {
+	height: 30px;
+}
+
 .tbody .dayComment  {
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 10px;
 }
+
+.tbody .dayComment .commentPlus {
+	width: 92%;
+	margin: 4px;
+	background-color: #474c50;
+	border: 1px solid #8f9295;
+	border-radius: 4px;
+	height: 43px;
+}
+.tbody .dayComment .commentPlus .plus {
+	margin-top: 3px;
+	margin-left: 3px;
+	float: left;
+}
+
+.tbody .dayComment .commentPlus .plus .plusTitle {
+	font-size: 15px;
+	margin-bottom: 4px;
+}
+
+.tbody .dayComment .commentPlus .plus .plusComment {
+	font-size: 11px;
+	font-weight: normal;
+	color: #b5bcc2;
+}
+
+.tbody .dayComment .commentPlus .plusButton {
+	float: right;
+	width: 23px;
+	border-left: 1px solid #8f9295;
+}
+
+.tbody .dayComment .commentPlus .plusButton button {
+	height: 43px;
+	border: 0;
+	border-radius: 0;
+	background-color: #474c50;
+	color: #ffffff;
+	outline: 0;
+}
+
+.tbody .dayComment .commentPlus .plusButton button:hover {
+	background-color: #8f9295;
+	transition: all .1s linear;
+}
+
