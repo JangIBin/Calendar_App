@@ -8,17 +8,17 @@ import {
   faGraduationCap, faLaptop
 } from "@fortawesome/free-solid-svg-icons";
 
-const ModalMenu = ({onOpenSecondModal}) => {
+const ModalMenu = ({onOpenSecondModal, onSendSchool, onSendIntern}) => {
 	
 	return(
 		<div className="Modal">
 			<div className="modal-list">
-				<button className="modal-school">
+				<button className="modal-school" onClick={onSendSchool} >
 					<i><FontAwesomeIcon icon={faGraduationCap} /></i>
 					<span>학교</span>
 				</button>
 				<hr className="buttonHr" />
-				<button className="modal-intern">
+				<button className="modal-intern" onClick={onSendIntern} >
 					<i><FontAwesomeIcon icon={faLaptop} /></i>
 					<span>인턴</span>
 				</button>

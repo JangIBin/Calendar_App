@@ -45,7 +45,44 @@ function CalendarApp() {
     });
     nextId.current += 1;
   }
-  console.log(users);
+
+  const onSendSchool = (day) => {
+    day = parseInt(day.format('YYYYMMDD'));
+
+    const user = {
+      id: nextId.current,
+      title: '학교',
+      comment: 'School',
+      day
+    };
+    setUsers([...users, user]);
+
+    setInputs({
+      title:'',
+      comment: ''
+    });
+    nextId.current += 1;
+    console.log(users)
+  }
+
+  const onSendIntern = (day) => {
+    day = parseInt(day.format('YYYYMMDD'));
+
+    const user = {
+      id: nextId.current,
+      title: '인턴',
+      comment: 'Intern',
+      day
+    };
+    setUsers([...users, user]);
+
+    setInputs({
+      title:'',
+      comment: ''
+    });
+    nextId.current += 1;
+    console.log(users)
+  }
   
 	const onRemove = (id) => {
 		setUsers(users.filter(user => user.id !== id))
@@ -92,14 +129,25 @@ function CalendarApp() {
       {
         calendar.map((week, index) => (
           <tr key={index}>
-            {week.map((day, index, user) => (
+            {week.map((day, index) => (
               <td className="day" onClick={() => setValue(day)} key={index}>
                 <div className="dayBundle">
                   <div id="dayNum" className={dayStyles(day, value)}>
-                    {day.format("D").toString()}
+                    <div className="date">
+                      {day.format("D").toString()}
+                    </div>
                   </div>
                   <div className="dayButton">
-                    <ModalPage users={users} title={title} comment={comment} onChange={onChange} onSend={()=>onSend(day)} onRemove={onRemove} />
+                    <ModalPage
+                      users={users} 
+                      title={title} 
+                      comment={comment} 
+                      onChange={onChange} 
+                      onSend={()=>onSend(day)} 
+                      onRemove={onRemove} 
+                      onSendSchool={() => onSendSchool(day)} 
+                      onSendIntern={() => onSendIntern(day)}
+                    />
                   </div>
                 </div>
                 

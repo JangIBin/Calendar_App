@@ -51,6 +51,11 @@
 	border-radius: 50px;
 }
 
+.tbody .day .date {
+	text-align: center;
+	margin-top: 1px;
+}
+
 .day-names {
 	display: flex;
 	margin-bottom: 10px;
