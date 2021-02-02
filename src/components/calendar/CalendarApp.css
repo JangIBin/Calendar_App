@@ -131,14 +131,13 @@
 
 .tbody .dayComment .commentPlus .plusButton {
 	float: right;
-	width: 23px;
+	width: 23.5px;
 	border-left: 1px solid #8f9295;
 }
 
 .tbody .dayComment .commentPlus .plusButton button {
 	height: 43px;
 	border: 0;
-	border-radius: 0;
 	background-color: #474c50;
 	color: #ffffff;
 	outline: 0;

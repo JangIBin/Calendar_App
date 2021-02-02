@@ -44,8 +44,7 @@ function Sidebar() {
     	<div className="empty"></div>
     	<hr />
     	<div className="sidebar-footer">
-    	  <p>+</p>
-    	  <div className="footer-name">New page</div>
+    		<div className="footer-name">Copyright Daelim University College JangIBin</div>
     	</div>
     </div>
   )

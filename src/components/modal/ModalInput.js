@@ -29,11 +29,13 @@ const ModalInput = ({users, title, comment, onChange, onSend, onRemove}) => {
 				</div>
       </div>
 			<hr />
-			<div className="commentModal">
-				<input name="comment" placeholder="Add a comment..." onChange={onChange} value={comment} />
-			</div>
-			<div className="modifyButtonModal">
-				<button onClick={onSend}>저장</button>
+			<div className="commentWrap">
+				<div className="commentModal">
+					<input name="comment" placeholder="Add a comment..." onChange={onChange} value={comment} />
+				</div>
+				<div className="modifyButtonModal">
+					<button onClick={onSend}>저장</button>
+				</div>
 			</div>
 			<ModalList users={users} onRemove={onRemove} />
 		</div>

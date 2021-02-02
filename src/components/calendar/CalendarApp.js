@@ -62,7 +62,6 @@ function CalendarApp() {
       comment: ''
     });
     nextId.current += 1;
-    console.log(users)
   }
 
   const onSendIntern = (day) => {
@@ -81,7 +80,6 @@ function CalendarApp() {
       comment: ''
     });
     nextId.current += 1;
-    console.log(users)
   }
   
 	const onRemove = (id) => {
