@@ -2,12 +2,11 @@ import React from 'react';
 
 // CSS, Image
 import './Sidebar.css';
-import img from '../../img/day.jpg';
 
 // FontAwesomeIcon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faSort, faSearch, faClock, faCog, faCaretRight, faStar
+	faSort, faSearch, faClock, faCog, faStar
 } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
@@ -29,17 +28,6 @@ function Sidebar() {
     	<div className="sidebar-settings">
     	  <i><FontAwesomeIcon icon={faCog} /></i>
     	  <div className="setting-name">Settings</div>
-    	</div>
-    	<div className="sidebar-addpage">
-    	  <div className="todolist">
-    	    <i><FontAwesomeIcon icon={faCaretRight} /></i>
-    	    <img src={img} alt="day" />
-    	    <div className="addpage-name">Calendar</div>
-    	  </div>
-    	</div>
-    	<div className="sidebar-todolist">
-    	  <p>+</p>
-    	  <div className="addpage-name">Add a page</div>
     	</div>
     	<div className="empty"></div>
     	<hr />

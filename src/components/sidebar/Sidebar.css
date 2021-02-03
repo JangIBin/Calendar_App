@@ -64,39 +64,6 @@
   margin-left: 12px;
 }
 
-.sidebar-addpage {
-  background-color: #474c50;
-  height: 26px;
-}
-
-.sidebar-addpage .todolist {
-  display: flex;
-  margin-top: 35px;
-  margin-left: 20px;
-  padding: 2px;
-}
-
-.sidebar-addpage .todolist i {
-  color: #8f9295;
-  margin-left: 3px;
-  margin-top: 3px;
-}
-
-.sidebar-addpage .todolist img {
-  width: 15px;
-  height: 15px;
-  margin-top: 3px;
-  margin-left: 10px;
-}
-
-.sidebar-addpage .todolist .addpage-name {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: bold;
-  margin-left: 12px;
-  margin-top: 3px;
-}
-
 .sidebar-todolist {
   display: flex;
   margin-left: 20px;
@@ -108,14 +75,6 @@
   font-size: 20px;
   margin-left: 4px;
   margin-top: 3px;
-}
-
-.sidebar-todolist .addpage-name {
-  color: #8f9295;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 6px;
-  margin-left: 14px;
 }
 
 .sidebar-service {
@@ -154,7 +113,7 @@
 }
 
 .empty {
-  height: 72%;
+  height: 81%;
 }
 
 hr{

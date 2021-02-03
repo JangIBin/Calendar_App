@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Comment({ user, onRemove, onUpdate }) {
 
@@ -15,19 +15,6 @@ function Comment({ user, onRemove, onUpdate }) {
       name: e.target.value
     });
 	};
-	
-	// useEffect(({user, show, onUpdate}) => {
-	// 	if (!show && show) {
-	// 		setState({
-	// 			[name]: name
-	// 		})
-	// 	} else if (show && !show) {
-	// 		onUpdate(user.id, {
-	// 			[name]: user.comment
-	// 		});
-	// 	}
-	// },[name])
-
 	
   if (show) {
     return (
