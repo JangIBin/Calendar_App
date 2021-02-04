@@ -81,6 +81,8 @@ function CalendarApp() {
     });
     nextId.current += 1;
   }
+
+  console.log(users);
   
 	const onRemove = (id) => {
 		setUsers(users.filter(user => user.id !== id))
@@ -97,6 +99,12 @@ function CalendarApp() {
   useEffect(() => {
     setCalendar(buildCalendar(value));
   },[value]);
+
+  // useMemo(() => {
+  //   const a = 1 + buildCalend;
+  //   return a
+  // }, [buildCalend]); // 변수
+  // useCallback(() => {}, []);  // 함수
 
   function prevMonth() {
     return value.clone().subtract(1, "month");

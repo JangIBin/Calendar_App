@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import './Intern.css';
 import '../../reset.css';
@@ -10,6 +10,8 @@ import {
 
 import AddComment from './AddComment';
 import CommentList from './CommentList';
+
+import {firestore} from "../../firebase/firebase";
 
 function Intern() {
 
@@ -65,6 +67,20 @@ function Intern() {
       user => id === user.id ? {...user, comment: !user.comment} : user
     ));
   }
+
+  const fetchData = useCallback(() => {
+    //받아온 데이터를 저장할 배열
+    let internData = [];
+
+    // firestore.js에서 가져온 firestore 객체
+    firestore
+      .collection("intern") // "intern" 컬렉션 반환
+      .get() // "intern" 컬렌셕의 모든 다큐먼트를  갖는 프로미스 반환
+      .then((docs) => {
+        // data(). id로 다큐먼트 필드, id 조회
+        internData.push()
+      })
+  })
 
   return (
     <div className="Intern">
