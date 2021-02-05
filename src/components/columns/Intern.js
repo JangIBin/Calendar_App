@@ -75,8 +75,9 @@ function Intern() {
     // firestore.js에서 가져온 firestore 객체
     firestore
       .collection("intern") // "intern" 컬렉션 반환
+      .doc(inputs)
       .get() // "intern" 컬렌셕의 모든 다큐먼트를  갖는 프로미스 반환
-      .then((docs) => {
+      .then((doc) => {
         // data(). id로 다큐먼트 필드, id 조회
         internData.push()
       })
