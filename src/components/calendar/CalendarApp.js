@@ -44,6 +44,8 @@ function CalendarApp() {
 			comment:''
     });
     nextId.current += 1;
+
+    console.log(user);
   }
 
   const onSendSchool = (day) => {
@@ -81,8 +83,6 @@ function CalendarApp() {
     });
     nextId.current += 1;
   }
-
-  console.log(users);
   
 	const onRemove = (id) => {
 		setUsers(users.filter(user => user.id !== id))

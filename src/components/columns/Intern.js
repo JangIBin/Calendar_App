@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import './Intern.css';
 import '../../reset.css';
@@ -19,20 +19,7 @@ function Intern() {
     comment: ''
   });
 
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      comment: '데이터 삭제, 추가, 수정 구현'
-    },
-    {
-      id: 2,
-      comment: 'calendar에 일정추가하기'
-    },
-    {
-      id: 3,
-      comment: '프로젝트 완료하기'
-    }
-  ]);
+  const [users, setUsers] = useState([]);
 
   const {comment} = inputs;
   const onChange = (e) => {
@@ -69,19 +56,39 @@ function Intern() {
   }
 
   const fetchData = useCallback(() => {
-    //받아온 데이터를 저장할 배열
-    let internData = [];
-
-    // firestore.js에서 가져온 firestore 객체
     firestore
-      .collection("intern") // "intern" 컬렉션 반환
-      .doc(inputs)
-      .get() // "intern" 컬렌셕의 모든 다큐먼트를  갖는 프로미스 반환
-      .then((doc) => {
-        // data(). id로 다큐먼트 필드, id 조회
-        internData.push()
-      })
-  })
+      .collection("intern")
+      .onSnapshot((snapshot) => {
+        setUsers(
+          snapshot.docs.map((doc) => ({id: doc.id, comment: doc.data().comment}))
+        );
+      });
+  }, []);
+
+  const add = (e) => {
+    e.preventDefault();
+
+    firestore.collection("intern").add({
+      comment: inputs
+    });
+
+    setInputs("");
+  }
+
+  const update = () => {
+    firestore.collection("intern").doc().set(
+      {
+        comment: inputs
+      },
+      {
+        merge: true
+      }
+    );
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return (
     <div className="Intern">

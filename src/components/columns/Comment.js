@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Comment({ user, onRemove, onUpdate }) {
+function Comment({ user, onRemove }) {
 
 	const [state, setState] = useState({name:user.comment})
 	const [show, setShow] = useState(false);
