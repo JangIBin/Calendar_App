@@ -15,9 +15,7 @@ import {firestore} from "../../firebase/firebase";
 
 function Intern() {
 
-  const [inputs, setInputs] = useState({
-    comment: ''
-  });
+  const [inputs, setInputs] = useState("");
 
   const [users, setUsers] = useState([]);
 
@@ -44,51 +42,42 @@ function Intern() {
     console.log(user);
   }
 
-  const onRemove = (id) => {
-    //user.id 가 id 인 것을 제거
-    setUsers(users.filter(user => user.id !== id));
-  }
-
+  //firestore
   const onUpdate = (id) => {
     setUsers(users.map(
       user => id === user.id ? {...user, comment: !user.comment} : user
     ));
   }
 
-  const fetchData = useCallback(() => {
-    firestore
-      .collection("intern")
-      .onSnapshot((snapshot) => {
-        setUsers(
-          snapshot.docs.map((doc) => ({id: doc.id, comment: doc.data().comment}))
-        );
-      });
-  }, []);
+  console.log(users);
 
   const add = (e) => {
     e.preventDefault();
 
     firestore.collection("intern").add({
-      comment: inputs
+      comment
     });
 
     setInputs("");
   }
 
-  const update = () => {
-    firestore.collection("intern").doc().set(
-      {
-        comment: inputs
-      },
-      {
-        merge: true
-      }
-    );
+  
+
+  const del = (id) => {
+    firestore.collection("intern")
+      .doc(id)
+      .delete()
   }
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    firestore.collection("intern")
+      .onSnapshot((snapshot) => {
+        setUsers(
+          snapshot.docs.map((doc) => ({ id: doc.id, comment: doc.data().comment }))
+        )
+      })
+  }, []);
+  // 여기까지 firestore
 
   return (
     <div className="Intern">
@@ -119,8 +108,8 @@ function Intern() {
                 </select>
               </div>
             </div>
-            <AddComment onChange={onChange} onSend={onSend} />
-            <CommentList comment={comment} users={users} onRemove={onRemove} onUpdate={onUpdate} />
+            <AddComment onChange={onChange} onSend={onSend} add={add} />
+            <CommentList comment={comment} users={users} onUpdate={onUpdate} />
           </div>
         </div>
       </div>
