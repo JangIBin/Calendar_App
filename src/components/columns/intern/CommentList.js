@@ -2,11 +2,11 @@ import React from 'react';
 
 import Comment from './Comment';
 
-function CommentList({ users, onUpdate, update }) {
+function CommentList({ users }) {
   return (
     <div className="background-wrap-commentlist">
       {users.map(user => (
-        <Comment user={user} key={user.id} onUpdate={onUpdate} update={update} />
+        <Comment user={user} key={user.id} />
       ))}
     </div>
   ) 

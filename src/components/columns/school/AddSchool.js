@@ -1,12 +1,11 @@
 import React from 'react';
 
-function AddComment({comment, onChange, onSend, add}) {
+function AddComment({comment, onChange, onSendSchool}) {
 	return (
 		<div className="background-wrap-comment">
       <hr />
       <input name="comment" placeholder="Add a comment..." onChange={onChange} value={comment} />
-      <button onClick={onSend}>Send</button>
-      <button onClick={add}>add</button>
+      <button onClick={onSendSchool}>Send</button>
       <hr />
     </div>
 	)

@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Intern.css';
-import '../../reset.css';
+import '../../../reset.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,7 +11,7 @@ import {
 import AddComment from './AddComment';
 import CommentList from './CommentList';
 
-import {firestore} from "../../firebase/firebase";
+import {firestore} from "../../../firebase/firebase";
 
 function Intern() {
 
@@ -28,30 +28,10 @@ function Intern() {
     });
   };
 
-  const onSend = () => {
-    const user = {
-      id:users.length+1,
-      comment
-    };
-    setUsers([...users, user]);
-
-    setInputs({
-      comment: ''
-    });
-    users.length += 1;
-    console.log(user);
-  }
-
-  //firestore
-  const onUpdate = (id) => {
-    setUsers(users.map(
-      user => id === user.id ? {...user, comment: !user.comment} : user
-    ));
-  }
-
   console.log(users);
 
-  const add = (e) => {
+  //firestore
+  const onSend = (e) => {
     e.preventDefault();
 
     firestore.collection("intern").add({
@@ -59,14 +39,6 @@ function Intern() {
     });
 
     setInputs("");
-  }
-
-  
-
-  const del = (id) => {
-    firestore.collection("intern")
-      .doc(id)
-      .delete()
   }
 
   useEffect(() => {
@@ -108,8 +80,8 @@ function Intern() {
                 </select>
               </div>
             </div>
-            <AddComment onChange={onChange} onSend={onSend} add={add} />
-            <CommentList comment={comment} users={users} onUpdate={onUpdate} />
+            <AddComment comment={comment} onChange={onChange} onSend={onSend} />
+            <CommentList users={users} />
           </div>
         </div>
       </div>

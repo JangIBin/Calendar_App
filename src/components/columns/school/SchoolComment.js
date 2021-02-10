@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import {firestore} from "../../firebase/firebase";
+import {firestore} from "../../../firebase/firebase";
 
 function Comment({ user }) {
 
@@ -11,13 +11,10 @@ function Comment({ user }) {
 
 	const toggleShow = () => setShow(!show);
 
-	const update = () => {
-    firestore.collection("intern").doc(user.id).set(
+	const onUpdate = () => {
+    firestore.collection("school").doc(user.id).set(
       {
         comment:name
-      },
-      {
-        merge: true
       }
 		);
 		setShow(false);
@@ -34,14 +31,14 @@ function Comment({ user }) {
     return (
       <div className="commentlist-comment">
       	<input type="text" value={name} onChange={ handleChange }/>
-				<button onClick={update}>DB저장</button>
+				<button onClick={onUpdate}>저장</button>
     	</div>
     );
   } else {
     return (
 			<div className="commentlist-comment">
 				<b>{name}</b>
-				<button onClick={(e) => firestore.collection("intern").doc(user.id).delete()}>삭제</button>
+				<button onClick={(e) => firestore.collection("school").doc(user.id).delete()}>삭제</button>
 				<button onClick={() => toggleShow()}>수정</button>
 		</div>
     );

@@ -11,8 +11,8 @@ import './reset.css';
 import Sidebar from "./components/sidebar/Sidebar"; 
 import Header from "./components/header/Header";
 import Main from './components/main/Main';
-import Intern from './components/columns/Intern';
-import School from './components/columns/School';
+import Intern from './components/columns/intern/Intern';
+import School from './components/columns/school/School';
 
 // import {Sidebar, Header, Main, Add, Intern, School} from './components'
 

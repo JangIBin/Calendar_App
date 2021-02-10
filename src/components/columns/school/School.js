@@ -1,15 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './School.css';
-import '../../reset.css';
+import '../../../reset.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClock, faCaretSquareDown
 } from "@fortawesome/free-solid-svg-icons";
 
-import AddComment from './AddComment';
-import CommentList from './CommentList';
+import AddSchool from './AddSchool';
+import SchoolList from './SchoolList';
+
+import {firestore} from "../../../firebase/firebase";
 
 function School() {
 
@@ -25,39 +27,28 @@ function School() {
     });
   };
 
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      comment: '흐하하하하하'
-    },
-    {
-      id: 2,
-      comment: '졸려어어어어어어어'
-    },
-    {
-      id: 3,
-      comment: 'Zzzzzzzzzz...'
-    }
-  ]);
+  const [users, setUsers] = useState([]);
 
-  const nextId = useRef(4);
-  const onSend = () => {
-    const user = {
-      id: nextId.current,
+  //firestore
+  const onSendSchool = (e) => {
+    e.preventDefault();
+
+    firestore.collection("school").add({
       comment
-    };
-    setUsers([...users, user]);
-
-    setInputs({
-      comment: ''
     });
-    nextId.current += 1;
+
+    setInputs("");
   }
 
-  const onRemove = (id) => {
-    //user.id 가 id 인 것을 제거
-    setUsers(users.filter(user => user.id !== id));
-  }
+  useEffect(() => {
+    firestore.collection("school")
+      .onSnapshot((snapshot) => {
+        setUsers(
+          snapshot.docs.map((doc) => ({ id: doc.id, comment: doc.data().comment }))
+        )
+      })
+  }, []);
+  // 여기까지 firestore
 
   return (
     <div className="School">
@@ -88,8 +79,8 @@ function School() {
                 </select>
               </div>
             </div>
-            <AddComment comment={comment} onChange={onChange} onSend={onSend} />
-            <CommentList users={users} onRemove={onRemove}  />
+            <AddSchool comment={comment} onChange={onChange} onSendSchool={onSendSchool} />
+            <SchoolList users={users} />
           </div>
         </div>
       </div>
