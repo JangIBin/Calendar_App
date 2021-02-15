@@ -12,6 +12,8 @@ import buildCalendar from "./build";
 import dayStyles from './styles';
 import ModalPage from '../modal/ModalPage';
 
+import {firestore} from "../../firebase/firebase";
+
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
@@ -47,6 +49,7 @@ function CalendarApp() {
 
     console.log(user);
   }
+  console.log(users);
 
   const onSendSchool = (day) => {
     day = parseInt(day.format('YYYYMMDD'));
@@ -96,8 +99,32 @@ function CalendarApp() {
     });
   };
 
+  const add = (e, day) => {
+    e.preventDefault();
+
+    firestore.collection("calendar").add({
+      title: inputs,
+      comment: inputs,
+      day: parseInt(day.format('YYYYMMDD'))
+    })
+  }
+
   useEffect(() => {
     setCalendar(buildCalendar(value));
+    
+    // firestore.collection("calendar")
+    //   .onSnapshot((snapshot) => {
+    //     setUsers(
+    //       snapshot.docs.map((doc) => (
+    //         {
+    //           id: doc.id, 
+    //           title: doc.data().title, 
+    //           comment: doc.data().comment, 
+    //           day: doc.data().day
+    //         }
+    //       ))
+    //     );
+    //   });
   },[value]);
 
   // useMemo(() => {
@@ -153,6 +180,7 @@ function CalendarApp() {
                       onRemove={onRemove} 
                       onSendSchool={() => onSendSchool(day)} 
                       onSendIntern={() => onSendIntern(day)}
+                      add={() => add(day)}
                     />
                   </div>
                 </div>

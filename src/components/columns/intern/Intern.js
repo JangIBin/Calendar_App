@@ -34,7 +34,7 @@ function Intern() {
   const onSend = (e) => {
     e.preventDefault();
 
-    firestore.collection("intern").add({
+    firestore.collection("Intern").add({
       comment
     });
 
