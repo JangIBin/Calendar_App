@@ -100,12 +100,13 @@ function CalendarApp() {
   };
 
   const add = (e, day) => {
+    day = parseInt(day.format('YYYYMMDD'));
     e.preventDefault();
 
     firestore.collection("calendar").add({
-      title: inputs,
-      comment: inputs,
-      day: parseInt(day.format('YYYYMMDD'))
+      title,
+      comment,
+      day
     })
   }
 
@@ -125,7 +126,7 @@ function CalendarApp() {
     //       ))
     //     );
     //   });
-  },[value]);
+  },[value]); 
 
   // useMemo(() => {
   //   const a = 1 + buildCalend;

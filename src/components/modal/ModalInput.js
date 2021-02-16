@@ -10,7 +10,7 @@ import {
 
 import ModalList from './ModalList';
 
-const ModalInput = ({users, title, comment, onChange, onSend, onRemove}) => {
+const ModalInput = ({users, title, comment, onChange, onSend, onRemove, add}) => {
 	
 	return(
 		<div className="Modal">
@@ -35,6 +35,7 @@ const ModalInput = ({users, title, comment, onChange, onSend, onRemove}) => {
 				</div>
 				<div className="modifyButtonModal">
 					<button onClick={onSend}>저장</button>
+					<button onClick={add}>add</button>
 				</div>
 			</div>
 			<ModalList users={users} onRemove={onRemove} />
