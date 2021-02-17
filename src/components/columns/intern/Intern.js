@@ -28,17 +28,17 @@ function Intern() {
     });
   };
 
-  console.log(users);
-
   //firestore
   const onSend = (e) => {
     e.preventDefault();
 
-    firestore.collection("Intern").add({
+    firestore.collection("intern").add({
       comment
     });
 
     setInputs("");
+
+    console.log(users);
   }
 
   useEffect(() => {

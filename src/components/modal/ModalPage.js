@@ -18,7 +18,7 @@ const ModalPage = ({users, title, comment, onChange, onSend, onRemove, onSendSch
 		if(openSecond===true && open === true){
 			setOpen(false);
 		}
-	})
+	},[open, openSecond])
 
 	return(
 		<div className="ModalPage">

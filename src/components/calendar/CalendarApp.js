@@ -12,7 +12,8 @@ import buildCalendar from "./build";
 import dayStyles from './styles';
 import ModalPage from '../modal/ModalPage';
 
-import {firestore} from "../../firebase/firebase";
+import {firestore} from "../../firebase/firebase"; 
+import firebase from 'firebase';
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
@@ -22,7 +23,7 @@ function CalendarApp() {
 
   const [inputs, setInputs] = useState({
 		title:'',
-		comment:''
+    comment:''
 	});
 	const {title, comment} = inputs;
 
@@ -99,14 +100,15 @@ function CalendarApp() {
     });
   };
 
-  const add = (e, day) => {
-    day = parseInt(day.format('YYYYMMDD'));
+  const add = (e) => {
+    // day = parseInt(day.format('YYYYMMDD'))
     e.preventDefault();
 
     firestore.collection("calendar").add({
       title,
       comment,
-      day
+      // 시간
+      day: firebase.firestore.FieldValue.serverTimestamp()
     })
   }
 
@@ -181,7 +183,7 @@ function CalendarApp() {
                       onRemove={onRemove} 
                       onSendSchool={() => onSendSchool(day)} 
                       onSendIntern={() => onSendIntern(day)}
-                      add={() => add(day)}
+                      add={add}
                     />
                   </div>
                 </div>
