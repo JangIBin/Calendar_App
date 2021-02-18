@@ -30,6 +30,10 @@
   color: #8f9295;
 }
 
+.table thead tr {
+	color: #8f9295;
+}
+
 .tbody .day div.before {
 	background-color: grey;
 	width: 19px;
@@ -54,17 +58,6 @@
 .tbody .day .date {
 	text-align: center;
 	margin-top: 1px;
-}
-
-.day-names {
-	display: flex;
-	margin-bottom: 10px;
-}
-
-.day-names .week {
-	margin-left: 6.5%;
-	margin-right: 6.3%;
-	color: #8f9295;
 }
 
 .tbody .day #dayNum {

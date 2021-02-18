@@ -23,7 +23,7 @@ function Main() {
               Calendar
             </div>
             <div className="main-subtitle">
-              Calendar_App with Notion
+              Daelim University College JangIBin
             </div>
             <div className="main-icon">
               <div className="icon-school">

@@ -13,7 +13,10 @@ import dayStyles from './styles';
 import ModalPage from '../modal/ModalPage';
 
 import {firestore} from "../../firebase/firebase"; 
-import firebase from 'firebase';
+
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);
@@ -108,7 +111,7 @@ function CalendarApp() {
       title,
       comment,
       // 시간
-      day: firebase.firestore.FieldValue.serverTimestamp()
+      // day
     })
   }
 
@@ -144,6 +147,10 @@ function CalendarApp() {
     return value.clone().add(1, "month");
   }
 
+  const test = ()=> {
+
+  }
+
   return (
     <div className="calendar">
       <div className="calendar-header">
@@ -153,14 +160,16 @@ function CalendarApp() {
           <button onClick={() => {setValue(nextMonth())}}><i><FontAwesomeIcon icon={faChevronRight}/></i></button>
         </div>
       </div>
-      <div className="day-names">
-      {
-        dayWeek.map((d, index) => (
-          <div key={index} className="week">{d}</div>
-        ))
-      }
-    </div>
     <table className="table">
+      <thead>
+        <tr>
+          {
+            dayWeek.map((d, index) => (
+              <th key={index} className="week">{d}</th>
+            ))
+          }
+        </tr>
+      </thead>
       <tbody className="tbody">
       {
         calendar.map((week, index) => (

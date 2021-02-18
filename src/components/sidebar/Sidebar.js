@@ -32,7 +32,7 @@ function Sidebar() {
     	<div className="empty"></div>
     	<hr />
     	<div className="sidebar-footer">
-    		<div className="footer-name">Copyright Daelim University College JangIBin</div>
+    		<div className="footer-name">Copyright Daelim University College Jang IBin</div>
     	</div>
     </div>
   )
