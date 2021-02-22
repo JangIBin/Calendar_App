@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import moment from 'moment';
 
 import './CalendarApp.css';
@@ -24,75 +24,40 @@ function CalendarApp() {
 
   const [users, setUsers] = useState([]);
 
-  const [inputs, setInputs] = useState({
-		title:'',
-    comment:''
-	});
+  const [inputs, setInputs] = useState("");
 	const {title, comment} = inputs;
 
 
   const dayWeek = ["일", "월", "화", "수", "목", "금", "토"];
 
-  const nextId = useRef(1);
-  const onSend = (day) => {
-    day = parseInt(day.format('YYYYMMDD'));
-
-    const user = {
-			id: nextId.current,
-			title,
-      comment,
-      day
-    };
-    setUsers([...users, user]);
-
-    setInputs({
-			title:'',
-			comment:''
-    });
-    nextId.current += 1;
-
-    console.log(user);
-  }
   console.log(users);
 
-  const onSendSchool = (day) => {
-    day = parseInt(day.format('YYYYMMDD'));
+  const onSendSchool = (e,day) => {
+    day = parseInt(day.format('YYYYMMDD'))
 
-    const user = {
-      id: nextId.current,
-      title: '학교',
-      comment: 'School',
+    e.preventDefault();
+
+    firestore.collection("calendar").add({
+      title: "학교",
+      comment: "School",
       day
-    };
-    setUsers([...users, user]);
-
-    setInputs({
-      title:'',
-      comment: ''
     });
-    nextId.current += 1;
+
+    setInputs("");
   }
 
-  const onSendIntern = (day) => {
-    day = parseInt(day.format('YYYYMMDD'));
+  const onSendIntern = (e,day) => {
+    day = parseInt(day.format('YYYYMMDD'))
 
-    const user = {
-      id: nextId.current,
-      title: '인턴',
-      comment: 'Intern',
+    e.preventDefault();
+
+    firestore.collection("calendar").add({
+      title: "인턴",
+      comment: "Intern",
       day
-    };
-    setUsers([...users, user]);
-
-    setInputs({
-      title:'',
-      comment: ''
     });
-    nextId.current += 1;
-  }
-  
-	const onRemove = (id) => {
-		setUsers(users.filter(user => user.id !== id))
+
+    setInputs("");
   }
   
   const onChange = (e) => {
@@ -103,34 +68,36 @@ function CalendarApp() {
     });
   };
 
-  const add = (e) => {
-    // day = parseInt(day.format('YYYYMMDD'))
+  const onSend = (e,day) => {
+    day = parseInt(day.format('YYYYMMDD'))
+
     e.preventDefault();
 
     firestore.collection("calendar").add({
       title,
       comment,
-      // 시간
-      // day
-    })
+      day
+    });
+
+    setInputs("");
   }
 
   useEffect(() => {
     setCalendar(buildCalendar(value));
     
-    // firestore.collection("calendar")
-    //   .onSnapshot((snapshot) => {
-    //     setUsers(
-    //       snapshot.docs.map((doc) => (
-    //         {
-    //           id: doc.id, 
-    //           title: doc.data().title, 
-    //           comment: doc.data().comment, 
-    //           day: doc.data().day
-    //         }
-    //       ))
-    //     );
-    //   });
+    firestore.collection("calendar")
+      .onSnapshot((snapshot) => {
+        setUsers(
+          snapshot.docs.map((doc) => (
+            {
+              id: doc.id, 
+              title: doc.data().title, 
+              comment: doc.data().comment, 
+              day: doc.data().day
+            }
+          ))
+        );
+      });
   },[value]); 
 
   // useMemo(() => {
@@ -145,10 +112,6 @@ function CalendarApp() {
 
   function nextMonth() {
     return value.clone().add(1, "month");
-  }
-
-  const test = ()=> {
-
   }
 
   return (
@@ -188,11 +151,9 @@ function CalendarApp() {
                       title={title} 
                       comment={comment} 
                       onChange={onChange} 
-                      onSend={()=>onSend(day)} 
-                      onRemove={onRemove} 
-                      onSendSchool={() => onSendSchool(day)} 
-                      onSendIntern={() => onSendIntern(day)}
-                      add={add}
+                      onSend={(e)=>onSend(e,day)} 
+                      onSendSchool={(e) => onSendSchool(e,day)} 
+                      onSendIntern={(e) => onSendIntern(e,day)}
                     />
                   </div>
                 </div>
@@ -212,7 +173,7 @@ function CalendarApp() {
                           </div>
                           
                           <div className="plusButton">
-                            <button onClick={() => onRemove(user.id)}>
+                            <button onClick={(e) => firestore.collection("calendar").doc(user.id).delete()}>
                               <i><FontAwesomeIcon icon={faTrash}/></i>
                             </button>
                           </div>

@@ -2,7 +2,9 @@ import React from 'react';
 
 import './ModalComment.css';
 
-function ModalComment({user, onRemove}) {
+import {firestore} from "../../firebase/firebase"; 
+
+function ModalComment({user}) {
 	return (
 		<div className="ModalComment">
 			<div className="modalWrap">
@@ -10,7 +12,7 @@ function ModalComment({user, onRemove}) {
 					<b><span>Title: </span>{user.title}</b>
 					<p><span>Comment: </span> {user.comment}</p>
 				</div>
-				<button onClick={() => onRemove(user.id)}>삭제</button>
+				<button onClick={(e) => firestore.collection("calendar").doc(user.id).delete()}>삭제</button>
 			</div>
 			<hr />
 		</div>

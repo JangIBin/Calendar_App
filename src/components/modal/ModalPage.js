@@ -5,7 +5,7 @@ import { Modal } from 'react-responsive-modal';
 import ModalMenu from './ModalMenu';
 import ModalInput from './ModalInput';
 
-const ModalPage = ({users, title, comment, onChange, onSend, onRemove, onSendSchool, onSendIntern, add}) => {
+const ModalPage = ({users, title, comment, onChange, onSend, onSendSchool, onSendIntern}) => {
 	const [open, setOpen] = useState(false);
 	const [openSecond, setOpenSecond] = useState(false);
 
@@ -27,7 +27,7 @@ const ModalPage = ({users, title, comment, onChange, onSend, onRemove, onSendSch
 				<ModalMenu onOpenSecondModal={onOpenSecondModal} onSendSchool={onSendSchool} onSendIntern={onSendIntern} />
 			</Modal>
 			<Modal open={openSecond} onClose={onCloseSecondModal} center>
-				<ModalInput users={users} title={title} comment={comment} onChange={onChange} onSend={onSend} onRemove={onRemove} add={add} />
+				<ModalInput users={users} title={title} comment={comment} onChange={onChange} onSend={onSend} />
 			</Modal>
 		</div>
 	);
