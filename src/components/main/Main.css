@@ -1,7 +1,3 @@
-.main {
-  margin-left: 14%;
-}
-  
 .main-background-1 {
   width: 100%;
   height: 350px;
@@ -123,9 +119,9 @@
 }
   
 .main .main-background-2 .main-calendar .table td{
-  width: 150px;
+  width: 164px;
   border: 1px solid #8f9295;
-  height: 150px;
+  height: 164px;
   /* 테이블 컨텐츠 상단 고정 */
   vertical-align: top;
 }

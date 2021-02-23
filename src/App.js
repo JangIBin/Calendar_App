@@ -8,9 +8,9 @@ import './App.css';
 import './reset.css';
 
 // Components
-import Sidebar from "./components/sidebar/Sidebar"; 
 import Header from "./components/header/Header";
 import Main from './components/main/Main';
+import Footer from './components/footer/Footer';
 import Intern from './components/columns/intern/Intern';
 import School from './components/columns/school/School';
 
@@ -19,13 +19,13 @@ import School from './components/columns/school/School';
 function App() {
   return (
     <div className="App">
-      <Sidebar />
       <Header />
       <Router>
         <Route path="/" component={Main} exact />
         <Route path="/intern" component={Intern} />
         <Route path="/school" component={School} />
       </Router>
+      <Footer />
     </div>
   );
 }
