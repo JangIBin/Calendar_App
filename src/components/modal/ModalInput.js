@@ -14,7 +14,7 @@ const ModalInput = ({users, title, comment, onChange, onSend}) => {
 	
 	return(
 		<div className="Modal">
-			<input name="title" placeholder="Untitled" onChange={onChange} value={title} />
+			<input name="title" placeholder="Untitled" onChange={onChange} value={title || ''} />
 			<hr />
 			<div className="modal-type">
 				<div className="modal-type-label">
@@ -31,7 +31,7 @@ const ModalInput = ({users, title, comment, onChange, onSend}) => {
 			<hr />
 			<div className="commentWrap">
 				<div className="commentModal">
-					<input name="comment" placeholder="Add a comment..." onChange={onChange} value={comment} />
+					<input name="comment" placeholder="Add a comment..." onChange={onChange} value={comment || ''} />
 				</div>
 				<div className="modifyButtonModal">
 					<button onClick={onSend}>저장</button>

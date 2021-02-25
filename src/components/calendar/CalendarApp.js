@@ -76,7 +76,7 @@ function CalendarApp() {
     firestore.collection("calendar").add({
       title,
       comment,
-      day
+      day,
     });
 
     setInputs("");
@@ -93,7 +93,7 @@ function CalendarApp() {
               id: doc.id, 
               title: doc.data().title, 
               comment: doc.data().comment, 
-              day: doc.data().day
+              day: doc.data().day,
             }
           ))
         );
