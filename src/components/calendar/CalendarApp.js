@@ -14,9 +14,6 @@ import ModalPage from '../modal/ModalPage';
 
 import {firestore} from "../../firebase/firebase"; 
 
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
 
 function CalendarApp() {
 	const [calendar, setCalendar] = useState([]);

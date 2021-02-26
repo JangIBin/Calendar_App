@@ -23,7 +23,7 @@ function Main() {
               Calendar
             </div>
             <div className="main-subtitle">
-              Daelim University College Jang IBin
+              Jang IBin
             </div>
             <div className="main-icon">
               <div className="icon-school">
