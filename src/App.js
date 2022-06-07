@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router>
+      <Router basename="/calendar_app">
         <Route path="/" component={Main} exact />
         <Route path="/intern" component={Intern} />
         <Route path="/school" component={School} />
