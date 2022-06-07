@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/calendar_app/static/css/main.45f5d83f.chunk.css",
-    "main.js": "/calendar_app/static/js/main.41598b35.chunk.js",
-    "main.js.map": "/calendar_app/static/js/main.41598b35.chunk.js.map",
+    "main.js": "/calendar_app/static/js/main.cc3acb87.chunk.js",
+    "main.js.map": "/calendar_app/static/js/main.cc3acb87.chunk.js.map",
     "runtime-main.js": "/calendar_app/static/js/runtime-main.c522d409.js",
     "runtime-main.js.map": "/calendar_app/static/js/runtime-main.c522d409.js.map",
     "static/css/2.26b8b167.chunk.css": "/calendar_app/static/css/2.26b8b167.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.26b8b167.chunk.css",
     "static/js/2.51829e8c.chunk.js",
     "static/css/main.45f5d83f.chunk.css",
-    "static/js/main.41598b35.chunk.js"
+    "static/js/main.cc3acb87.chunk.js"
   ]
 }
